@@ -1,0 +1,41 @@
+<section @name="team" class="team fluid">
+  <header>
+    <p>CORE CONTRIBUTORS [+]</p>
+    <span>{ team.members.length }</span>
+  </header>
+  <main>
+    <div class="profile">
+      <div>
+        <p>{ team.default.name }</p>
+        <a href="{ team.default.github  }">Github profile →</a>
+      </div>
+      <span>{ team.default.id }</span>
+    </div>
+    <img src="{ team.default.image  }" alt="Dmitry" />
+    <div class="careers">
+      <icon src="icon/team/careers.svg"></icon>
+      <span>Careers</span>
+      <p>
+        We are always looking for passionate and talented individuals to join
+        our team.
+      </p>
+      <a>View openings</a>
+    </div>
+  </main>
+  <footer>
+    <div class="contributor" :for="member in team.members">
+      <img
+        src="{ member.image }"
+        alt="{ member.name }"
+        width="104.5"
+        height="100"
+        draggable="false"
+      />
+      <div class="profile">
+        <p>{ member.name }</p>
+        <span>{ member.id }</span>
+      </div>
+      <a href="{ member.github }">Github profile -></a>
+    </div>
+  </footer>
+</section>

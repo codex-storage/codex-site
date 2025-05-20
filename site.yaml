@@ -1,0 +1,44 @@
+# yaml-language-server: $schema=https://json.schemastore.org/nuejs-site.json
+
+globals: ["@global"]
+libs: ["@library"]
+
+view_transitions: true
+native_css_nesting: true
+inline_css: true
+sections: true
+
+title_template: "%s | Codex"
+og_image: /img/og.png
+author: Codex
+favicon: /img/favicon.ico
+description: Codex is a durable, decentralised storage protocol designed to safeguard the world's most valuable information.
+port: 8085
+
+# OG image
+origin: https://codex.storage
+#og: /img/og.jpg
+
+navigation:
+  header:
+    - Index: /
+    - Contact: /contact/
+
+  footer:
+    - About: /about
+    - Clients: /
+    - Getting Started: /
+    - Resources: /
+    - Community: /
+    - Careers: /
+    - Blog: /
+
+  social:
+    - Github: /
+    - Discord: /
+
+  end:
+    - label: Terms & conditions
+      link: /toto
+    - label: Privacy Policy
+      link: /

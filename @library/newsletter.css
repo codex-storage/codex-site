@@ -1,0 +1,52 @@
+.newsletter {
+  display: block;
+
+  p {
+    margin: 0;
+    color: var(--light-20);
+    margin-bottom: 1em;
+    position: relative;
+    z-index: 1;
+  }
+
+  form {
+    display: flex;
+    gap: 1em;
+    padding-bottom: 1em;
+    border-bottom: 2px solid var(--light-20);
+    position: relative;
+    z-index: 1;
+
+    input {
+      color: var(--light-20);
+      background-color: transparent;
+      appearance: none;
+      border: none;
+      padding: 0;
+      font-size: 1.5em;
+      outline: none;
+      margin: 0;
+      padding-left: 0.5em;
+
+      @media (max-width: 800px) {
+        width: 100%;
+      }
+    }
+
+    button {
+      color: var(--light-10);
+      background-color: var(--grey-30);
+      border-radius: 32px;
+      padding: 1em 2em;
+      border: none;
+      font-weight: 500;
+      transition: background-color 0.5s, color 0.5s;
+      cursor: pointer;
+
+      &:hover {
+        background-color: var(--green-10);
+        color: var(--dark-10);
+      }
+    }
+  }
+}

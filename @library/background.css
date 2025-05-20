@@ -1,0 +1,46 @@
+.background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  span {
+    display: block;
+    width: 13px;
+    height: 13px;
+    padding: 1px;
+    margin: 0;
+    font-size: 13px;
+    cursor: default;
+    transition: color 0.5s, transform 0.2s;
+    transform-origin: 28% 250%;
+    transition-delay: 0.5s;
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-overflow-scrolling: touch;
+    color: var(--grey-120);
+  }
+
+  span.hover {
+    /* color: var(--grey-110); */
+    color: rgb(var(--green-11));
+    transform: rotateZ(360deg);
+    transition: color 0.1s, transform 0.5s;
+  }
+  span.hover2 {
+    color: rgba(var(--green-11), 70);
+    /* color: var(--grey-110); */
+    transform: rotateZ(-360deg);
+    transition: color 1s, transform 0.5s;
+  }
+
+  .row {
+    float: left;
+    padding: 0;
+    margin: 0;
+    height: 10px;
+    overflow: hidden;
+  }
+}

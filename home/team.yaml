@@ -1,0 +1,47 @@
+team:
+  default:
+    name: Dmitriy Ryajov
+    github: /
+    id: 12345678
+    image: img/dmitry.png
+
+  members:
+    - name: Name Surname
+      github: /
+      id: Status ID
+      image: img/contributor.png
+
+    - name: Name Surname
+      github: /
+      id: Status ID
+      image: img/contributor.png
+
+    - name: Name Surname
+      github: /
+      id: Status ID
+      image: img/contributor.png
+
+    - name: Name Surname
+      github: /
+      id: Status ID
+      image: img/contributor.png
+
+    - name: Name Surname
+      github: /
+      id: Status ID
+      image: img/contributor.png
+
+    - name: Name Surname
+      github: /
+      id: Status ID
+      image: img/contributor.png
+
+    - name: Name Surname
+      github: /
+      id: Status ID
+      image: img/contributor.png
+
+    - name: Name Surname
+      github: /
+      id: Status ID
+      image: img/contributor.png

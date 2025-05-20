@@ -1,0 +1,27 @@
+<header>
+  <navi :items="navigation.header" />
+  <script
+    src="https://tympanus.net/Tutorials/AnimatedCodeBackground/js/gsap.min.js"
+    class="__web-inspector-hide-shortcut__"
+  ></script>
+</header>
+
+<footer>
+  <div>
+    <span>Codex</span>
+    <div>
+      <navi :items="navigation.footer" />
+      <navi :items="navigation.social" />
+    </div>
+    <newsletter></newsletter>
+  </div>
+
+  <div>
+    <h5>Defend Against Data Censorship.</h5>
+    <p>Website last updated: Feb 18, 2025</p>
+  </div>
+
+  <navigation-end :items="navigation.end"></navigation-end>
+
+  <background></background>
+</footer>

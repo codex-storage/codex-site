@@ -1,0 +1,36 @@
+<section @name="contribution" class="contribution">
+  <header>
+    <p>CONTRIBUTORS [-]</p>
+    <span>07</span>
+  </header>
+
+  <main>
+    <div>
+      <h3>Contribute to Codex</h3>
+      <p>
+        Codex is an <b>open source</b> initiative in which anyone can get
+        involved
+      </p>
+    </div>
+
+    <div class="contributors">
+      <a
+        :for="contributor in contribution.people"
+        href="{ contributor.github }"
+      >
+        <img
+          src="{ contributor.image }"
+          alt="{ contributor.name }"
+          width="84"
+          height="84"
+        />
+      </a>
+    </div>
+
+    <p>There is No Web3 Without Truly <b>Decentralized</b> Storage</p>
+  </main>
+  <footer>
+    <p>View Contributors 🡪</p>
+    <navi :items="contribution.links" />
+  </footer>
+</section>
