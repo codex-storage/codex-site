@@ -1,0 +1,33 @@
+.news {
+  main {
+    display: flex;
+    gap: 1.5em;
+    div {
+      width: 360;
+      height: 160;
+      border-radius: 16px;
+      background-color: var(--dark-50);
+      padding: 2em;
+
+      h3 {
+        font-family: Azeret Mono;
+        font-weight: 400;
+        font-size: 0.75em;
+        line-height: 120%;
+        text-transform: uppercase;
+        color: white;
+
+        span {
+          color: var(--grey-25);
+        }
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 1.15em;
+        line-height: 26px;
+        color: var(--grey-80);
+      }
+    }
+  }
+}

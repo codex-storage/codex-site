@@ -1,0 +1,41 @@
+<div @name="menu" class="menu">
+  <div>
+    <icon src="icon/logo.svg"></icon>
+    <icon src="icon/header/close.svg"></icon>
+  </div>
+  <div>
+    <main>
+      <nav>
+        <span class="intro">
+          <span>NAVIGATION [+]</span>
+          <span>00</span>
+        </span>
+        <a :for="item, i in navigation.header" href="{ item.href  }">
+          <label>{ item.label }</label>
+          <span>0{ i + 1 } [+]</span>
+        </a>
+      </nav>
+
+      <p>Defend Against Data Censorship.</p>
+
+      <div class="social">
+        <a
+          :for="item in navigation.header_social"
+          href="{ item.href  }"
+          target="_blank"
+        >
+          <icon src="{ item.icon }"></icon>
+          <label>{ item.label }</label>
+        </a>
+      </div>
+
+      <testnet></testnet>
+    </main>
+    <footer>
+      <span>© 2025 Codex</span>
+      <span
+        >Built by <u><b>IFT</b></u></span
+      >
+    </footer>
+  </div>
+</div>
