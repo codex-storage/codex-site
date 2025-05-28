@@ -13,7 +13,12 @@
     <span>Codex</span>
     <div>
       <navi :items="navigation.footer" />
-      <navi :items="navigation.social" />
+
+      <nav>
+        <a :for="item in navigation.social" href="{ item.href }">
+          { item.label }
+        </a>
+      </nav>
     </div>
     <newsletter></newsletter>
   </div>

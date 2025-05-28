@@ -29,11 +29,27 @@
   > div + div {
     @media (min-width: 801px) {
       display: flex;
-      justify-content: flex-end;
+      justify-content: space-between;
       flex: 1;
       align-items: center;
       padding: 0 3em;
       gap: 3em;
+
+      main {
+        display: flex;
+        flex: 1;
+        justify-content: space-between;
+
+        nav {
+          justify-content: center;
+
+          div {
+            display: flex;
+            gap: 3em;
+            align-items: center;
+          }
+        }
+      }
     }
 
     @media (max-width: 800px) {
@@ -42,7 +58,7 @@
       width: 100%;
       background-color: var(--dark-60);
       opacity: 0;
-      transform: translateY(-500px);
+      transform: translateY(-1500px);
       transition: opacity 0.5s, transform 0.5s;
       z-index: -1;
 
@@ -96,7 +112,7 @@
       @media (min-width: 801px) {
         align-items: center;
         gap: 3em;
-        height: 100%;
+        flex: 1;
       }
 
       @media (max-width: 800px) {

@@ -6,14 +6,16 @@
   <div>
     <main>
       <nav>
-        <span class="intro">
-          <span>NAVIGATION [+]</span>
-          <span>00</span>
-        </span>
-        <a :for="item, i in navigation.header" href="{ item.href  }">
-          <label>{ item.label }</label>
-          <span>0{ i + 1 } [+]</span>
-        </a>
+        <div>
+          <span class="intro">
+            <span>NAVIGATION [+]</span>
+            <span>00</span>
+          </span>
+          <a :for="item, i in navigation.header" href="{ item.href  }">
+            <label>{ item.label }</label>
+            <span>0{ i + 1 } [+]</span>
+          </a>
+        </div>
       </nav>
 
       <p>Defend Against Data Censorship.</p>

@@ -73,6 +73,11 @@ body {
     padding: var(--padding-section);
     position: relative;
 
+    > div:not(.background) {
+      max-width: var(--max-width);
+      margin: auto;
+    }
+
     a {
       transition: border-color 0.5s;
       border-bottom: 1px solid transparent;
@@ -114,11 +119,18 @@ body {
       nav + nav {
         margin-top: 3em;
 
+        a {
+          margin-right: 3em;
+          position: relative;
+        }
+
         a:first-child::after {
           content: "/";
           margin-right: 1.5em;
           margin-left: 1.8em;
           color: var(--grey-10);
+          position: absolute;
+          right: -45px;
         }
       }
 

@@ -1,5 +1,6 @@
 .team {
   position: relative;
+  margin-bottom: 6em;
 
   img {
     user-select: none;
@@ -7,111 +8,117 @@
 
   header {
     padding: var(--padding-section);
+    max-width: var(--max-width);
+    margin: auto;
   }
 
   main {
-    display: flex;
-    justify-content: space-between;
-    background-image: url(/img/core.svg);
-    background-repeat: no-repeat;
+    max-width: var(--max-width);
+    padding: var(--padding-section);
     margin: auto;
-    width: calc(100% - 5em);
 
-    @media (max-width: 600px) {
-      flex-direction: column;
-    }
-
-    .profile {
+    > div {
       display: flex;
-      gap: 6em;
+      justify-content: space-between;
+      background-image: url(/img/core.svg);
+      background-repeat: no-repeat;
 
-      p {
-        font-weight: 600;
-        font-size: 1.5em;
-        line-height: 1.1em;
-        margin: 0;
-        white-space: nowrap;
+      @media (max-width: 600px) {
+        flex-direction: column;
       }
 
-      a {
-        font-size: 1em;
-        color: #000;
-      }
+      .profile {
+        display: flex;
+        gap: 6em;
 
-      span {
-        color: var(--grey-40);
-        font-size: 1.25em;
-        line-height: 26px;
-        white-space: nowrap;
+        p {
+          font-weight: 600;
+          font-size: 1.5em;
+          line-height: 1.1em;
+          margin: 0;
+          white-space: nowrap;
+        }
+
+        a {
+          font-size: 1em;
+          color: #000;
+        }
+
+        span {
+          color: var(--grey-40);
+          font-size: 1.25em;
+          line-height: 26px;
+          white-space: nowrap;
+
+          @media (max-width: 1200px) {
+            align-self: flex-start;
+          }
+
+          @media (max-width: 600px) {
+            align-self: center;
+          }
+        }
 
         @media (max-width: 1200px) {
-          align-self: flex-start;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        @media (min-width: 1201px) {
+          align-self: center;
         }
 
         @media (max-width: 600px) {
-          align-self: center;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
         }
       }
 
-      @media (max-width: 1200px) {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
+      .careers {
+        width: 200px;
+        background-color: var(--light-30);
+        border-radius: var(--border-radius);
+        border-bottom: 4px solid var(--green-10);
+        padding: 1em;
+        align-self: flex-start;
+        width: 100%;
 
-      @media (min-width: 1201px) {
-        align-self: center;
-      }
+        @media (min-width: 1201px) {
+          max-width: 400px;
+        }
 
-      @media (max-width: 600px) {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
-    }
+        @media (max-width: 1200px) {
+          position: absolute;
+          bottom: -225px;
+          left: 0;
+          right: 0;
+          width: calc(100% - 4em);
+          margin: auto;
+        }
 
-    .careers {
-      width: 200px;
-      background-color: var(--light-30);
-      border-radius: var(--border-radius);
-      border-bottom: 4px solid var(--green-10);
-      padding: 1em;
-      align-self: flex-start;
-      width: 100%;
+        span {
+          color: var(--green-10);
+          text-transform: uppercase;
+          display: block;
+          margin-top: 1em;
+        }
 
-      @media (min-width: 1201px) {
-        max-width: 400px;
-      }
+        p {
+          color: var(--grey-50);
+          font-size: 1.25em;
+        }
 
-      @media (max-width: 1200px) {
-        position: absolute;
-        bottom: -225px;
-        left: 0;
-        right: 0;
-        width: calc(100% - 4em);
-        margin: auto;
-      }
-
-      span {
-        color: var(--green-10);
-        text-transform: uppercase;
-        display: block;
-        margin-top: 1em;
-      }
-
-      p {
-        color: var(--grey-50);
-        font-size: 1.25em;
-      }
-
-      a {
-        color: var(--green-10);
-        font-size: 0.85em;
-        text-transform: uppercase;
-        font-family: "Azeret Mono", monospace;
-        font-optical-sizing: auto;
-        font-weight: 600;
-        font-style: normal;
+        a {
+          color: var(--green-10);
+          font-size: 0.85em;
+          text-transform: uppercase;
+          font-family: "Azeret Mono", monospace;
+          font-optical-sizing: auto;
+          font-weight: 600;
+          font-style: normal;
+        }
       }
     }
   }
@@ -124,6 +131,13 @@
     padding-left: 2em;
     padding-right: 2em;
     /* scroll-behavior: smooth; */
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     @media (pointer: fine), (pointer: none) {
       overflow-x: scroll;

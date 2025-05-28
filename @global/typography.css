@@ -1,13 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Inter:opsz,wght@14..32,600&display=swap");
-/* @font-face {
-  font-family: "Inter var";
-  src: url("/fonts/Inter-VariableFont_opsz,wght.ttf")
-    format("truetype-variations");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-} */
+@import url("https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&family=Inter:opsz,wght@14..32,100..900&display=swap");
 
 :root {
   font-family: "Inter", sans-serif;

@@ -30,8 +30,15 @@
 
         &:first-child {
           p {
-            margin-left: 20%;
             max-width: 450px;
+          }
+
+          @media (min-width: 801px) {
+            margin-left: 20%;
+          }
+
+          @media (max-width: 800px) {
+            flex-direction: column;
           }
         }
       }
@@ -54,9 +61,17 @@
 
     footer {
       color: var(--grey-80);
-      margin-top: 4em;
       display: flex;
-      align-items: center;
+
+      @media (min-width: 801px) {
+        margin-top: 4em;
+        align-items: center;
+      }
+
+      @media (max-width: 800px) {
+        flex-direction: column;
+        margin-top: 2em;
+      }
 
       p {
         margin: 0;
@@ -65,10 +80,17 @@
       }
 
       nav {
-        margin-left: 20%;
         display: flex;
         align-items: center;
         gap: 2em;
+
+        @media (min-width: 801px) {
+          margin-left: 20%;
+        }
+
+        @media (max-width: 800px) {
+          margin-top: 1em;
+        }
       }
 
       a {

@@ -66,8 +66,11 @@ navigation:
     - Blog: /
 
   social:
-    - Github: /
-    - Discord: /
+    - label: Github
+      href: /
+
+    - label: Discord
+      href: /
 
   end:
     - label: Terms & conditions
