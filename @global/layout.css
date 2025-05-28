@@ -67,11 +67,18 @@ body {
   > footer {
     background-image: url(/img/codex.svg);
     background-repeat: no-repeat;
-    background-position: 2em bottom;
-    background-size: auto 300px;
+    background-size: auto 325px;
     background-color: var(--dark-10);
     padding: var(--padding-section);
     position: relative;
+
+    @media (min-width: 1401px) {
+      background-position: center bottom;
+    }
+
+    @media (max-width: 1400px) {
+      background-position: left bottom;
+    }
 
     > div:not(.background) {
       max-width: var(--max-width);

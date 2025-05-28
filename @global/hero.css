@@ -2,7 +2,7 @@
   display: flex;
   background-color: var(--dark-30);
   height: 720px;
-  background-image: url(img/hero.png);
+  background-image: url(/img/hero.webp);
   background-blend-mode: lighten;
   background-position: right -400px top -300px;
   background-repeat: no-repeat;

@@ -2,7 +2,7 @@
   background-color: var(--dark-20);
 
   section {
-    background-image: url(img/disk.jpg);
+    background-image: url(/img/disk.webp);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: 30%;
@@ -31,10 +31,10 @@
         &:first-child {
           p {
             max-width: 450px;
-          }
 
-          @media (min-width: 801px) {
-            margin-left: 20%;
+            @media (min-width: 801px) {
+              margin-left: 20%;
+            }
           }
 
           @media (max-width: 800px) {
