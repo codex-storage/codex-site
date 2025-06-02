@@ -1,9 +1,9 @@
 .resource {
   position: relative;
+  cursor: pointer;
 
   > .resource-img {
     width: 100%;
-    aspect-ratio: 1;
     border-radius: 1.6rem;
     position: relative;
     overflow: hidden;
@@ -12,6 +12,7 @@
     --x: 0px;
     --y: 0px;
     background-color: black;
+    height: 426px;
 
     &::after {
       content: "";
@@ -22,7 +23,7 @@
       height: 100%;
       background: radial-gradient(
         100% 100% at 50% 50%,
-        #171825 42%,
+        #171825 40%,
         #4f9480 50%,
         #6bbf8f,
         #e6c78b
@@ -59,7 +60,7 @@
 
   img {
     position: absolute;
-    bottom: -50px;
+    bottom: 0px;
     z-index: 1;
   }
 

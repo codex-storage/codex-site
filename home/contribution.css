@@ -48,6 +48,16 @@
         gap: 4em;
         align-items: center;
         overflow: hidden;
+
+        .slider {
+          width: 100%;
+          --slider-item-width: calc(84px + 2em);
+          --slider-item-height: 84px;
+          --slider-items: 25;
+          --slider-duration: 60s;
+          --slider-direction: reverse;
+          --slider-margin-block: 0;
+        }
       }
 
       p {

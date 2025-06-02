@@ -49,8 +49,8 @@ import _ from "https://cdn.jsdelivr.net/npm/underscore@1.13.7/+esm";
   };
 
   const redraw = () => {
-    let wh = d.clientHeight,
-      ww = d.clientWidth + 15,
+    let wh = d.clientHeight + 9,
+      ww = window.innerWidth + 10,
       /*These arrays are to workaround CodePen's infinite loop "feature", large for-loops seem to trigger the error even if the loop isn't actually infinite :/ - Creating arrays padded with zeroes and using forEach seems to work (for now!!).*/
       cols = new Array((ww / 15) | 0).join("0").split(""),
       rows = new Array((wh / 15) | 0).join("0").split(""),

@@ -1,41 +1,134 @@
 contribution:
   links:
-    - Testnet Operators: /
-    - Discord: /
-    - Github: /
+    - label: Testnet Operators
+      url: /
+    - label: Discord
+      url: /discord
+    - label: Github
+      url: /github
   people:
-    - name: Henry
-      image: img/contributor-github.png
-      github: /
-
-    - name: Henry
-      image: img/contributor-github.png
-      github: /
-
-    - name: Henry
-      image: img/contributor-github.png
-      github: /
-
-    - name: Henry
-      image: img/contributor-github.png
-      github: /
-
-    - name: Henry
-      image: img/contributor-github.png
-      github: /
-
-    - name: Henry
-      image: img/contributor-github.png
-      github: /
-
-    - name: Henry
-      image: img/contributor-github.png
-      github: /
-
-    - name: Henry
-      image: img/contributor-github.png
-      github: /
-
-    - name: Henry
-      image: img/contributor-github.png
-      github: /
+    - name: markspanbroek
+      src: https://avatars.githubusercontent.com/u/1766771?v=4
+      width: 84
+      height: 84
+      github: /markspanbroek
+    - name: dryajov
+      src: https://avatars.githubusercontent.com/u/1094341?v=4
+      width: 84
+      height: 84
+      github: /dryajov
+    - name: benbierens
+      src: https://avatars.githubusercontent.com/u/39762930?v=4
+      width: 84
+      height: 84
+      github: /benbierens
+    - name: emizzle
+      src: https://avatars.githubusercontent.com/u/5089238?v=4
+      width: 84
+      height: 84
+      github: /emizzle
+    - name: AuHau
+      src: https://avatars.githubusercontent.com/u/6072250?v=4
+      width: 84
+      height: 84
+      github: /AuHau
+    - name: veaceslavdoina
+      src: https://avatars.githubusercontent.com/u/20563034?v=4
+      width: 84
+      height: 84
+      github: /veaceslavdoina
+    - name: 2-towns
+      src: https://avatars.githubusercontent.com/u/27618471?v=4
+      width: 84
+      height: 84
+      github: /2-towns
+    - name: gmega
+      src: https://avatars.githubusercontent.com/u/1887335?v=4
+      width: 84
+      height: 84
+      github: /gmega
+    - name: michaelsbradleyjr
+      src: https://avatars.githubusercontent.com/u/194260?v=4
+      width: 84
+      height: 84
+      github: /michaelsbradleyjr
+    - name: tbekas
+      src: https://avatars.githubusercontent.com/u/1319441?v=4
+      width: 84
+      height: 84
+      github: /tbekas
+    - name: marcinczenko
+      src: https://avatars.githubusercontent.com/u/298182?v=4
+      width: 84
+      height: 84
+      github: /marcinczenko
+    - name: markoburcul
+      src: https://avatars.githubusercontent.com/u/39484255?v=4
+      width: 84
+      height: 84
+      github: /markoburcul
+    - name: elcritch
+      src: https://avatars.githubusercontent.com/u/34277?v=4
+      width: 84
+      height: 84
+      github: /elcritch
+    - name: Bulat-Ziganshin
+      src: https://avatars.githubusercontent.com/u/1798016?v=4
+      width: 84
+      height: 84
+      github: /Bulat-Ziganshin
+    - name: munna0908
+      src: https://avatars.githubusercontent.com/u/88337208?v=4
+      width: 84
+      height: 84
+      github: /munna0908
+    - name: Menduist
+      src: https://avatars.githubusercontent.com/u/13471753?v=4
+      width: 84
+      height: 84
+      github: /Menduist
+    - name: yyoncho
+      src: https://avatars.githubusercontent.com/u/13259670?v=4
+      width: 84
+      height: 84
+      github: /yyoncho
+    - name: cskiraly
+      src: https://avatars.githubusercontent.com/u/1183261?v=4
+      width: 84
+      height: 84
+      github: /cskiraly
+    - name: vpavlin
+      src: https://avatars.githubusercontent.com/u/4759808?v=4
+      width: 84
+      height: 84
+      github: /vpavlin
+    - name: zah
+      src: https://avatars.githubusercontent.com/u/175462?v=4
+      width: 84
+      height: 84
+      github: /zah
+    - name: q9f
+      src: https://avatars.githubusercontent.com/u/58883403?v=4
+      width: 84
+      height: 84
+      github: /q9f
+    - name: brbrr
+      src: https://avatars.githubusercontent.com/u/5654161?v=4
+      width: 84
+      height: 84
+      github: /brbrr
+    - name: c-blake
+      src: https://avatars.githubusercontent.com/u/8928205?v=4
+      width: 84
+      height: 84
+      github: /c-blake
+    - name: jessiebroke
+      src: https://avatars.githubusercontent.com/u/18238304?v=4
+      width: 84
+      height: 84
+      github: /jessiebroke
+    - name: tianzedavid
+      src: https://avatars.githubusercontent.com/u/168427849?v=4
+      width: 84
+      height: 84
+      github: /tianzedavid

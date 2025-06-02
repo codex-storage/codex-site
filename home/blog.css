@@ -1,6 +1,6 @@
 .blog {
-  background-image: url(img/blog.svg);
-  background-position: 3em 0;
+  background-image: url(/img/blog.svg);
+  background-position: 3em 3em;
   background-repeat: no-repeat;
 
   header {

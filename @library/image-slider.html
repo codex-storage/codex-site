@@ -1,0 +1,13 @@
+<div @name="image-slider" class="slider { class }">
+  <img
+    :for="item in items"
+    src="{ item.src }"
+    class="slider-item"
+    width="{ item.width }"
+    height="{ item.height }"
+  />
+</div>
+
+<div @name="icon-slider" class="slider">
+  <icon :for="item in items" src="{ item.src }" class="slider-item"></icon>
+</div>

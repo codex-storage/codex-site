@@ -1,20 +1,20 @@
 .team {
   position: relative;
-  margin-bottom: 6em;
+
+  @media (min-width: 1201px) {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 1200px) {
+    margin-bottom: 20em;
+  }
 
   img {
     user-select: none;
   }
 
-  header {
-    padding: var(--padding-section);
-    max-width: var(--max-width);
-    margin: auto;
-  }
-
   main {
     max-width: var(--max-width);
-    padding: var(--padding-section);
     margin: auto;
 
     > div {
@@ -130,7 +130,7 @@
     cursor: grab;
     padding-left: 2em;
     padding-right: 2em;
-    /* scroll-behavior: smooth; */
+    mask-image: linear-gradient(to right, #0000, #000 10% 95%, #0000);
 
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -158,10 +158,40 @@
       border-radius: var(--border-radius);
       white-space: nowrap;
       user-select: none;
+      min-width: 315px;
+      max-width: 315px;
+
+      a:visited {
+        color: #000;
+        font-weight: 600;
+      }
     }
 
-    @media (max-width: 1200px) {
-      margin-bottom: 300px;
+    .profile {
+      p {
+        font-weight: 600;
+        font-size: 1.5em;
+        line-height: 1.1em;
+        font-weight: 600;
+        margin-bottom: 0.25em;
+        font-family: Inter;
+      }
+
+      span {
+        font-weight: 400;
+        font-size: 1.15em;
+        line-height: 26px;
+        color: var(--grey-24);
+      }
+
+      a {
+        font-size: 1em;
+        color: #000;
+
+        &:visited {
+          color: #000;
+        }
+      }
     }
   }
 }

@@ -1,47 +1,82 @@
 team:
   default:
-    name: Dmitriy Ryajov
+    name: Dmitriy
     github: /
     id: 12345678
     image: img/dmitry.png
 
   members:
-    - name: Name Surname
-      github: /
-      id: Status ID
-      image: img/contributor.png
+    - name: Dmitry
+      github: https://github.com/dryajov
+      id: dryajov
+      image: img/dmitry.png
 
-    - name: Name Surname
-      github: /
-      id: Status ID
-      image: img/contributor.png
+    - name: Jessie
+      github: https://github.com/jessiebroke
+      id: jessiebroke
+      image: img/dmitry.png
 
-    - name: Name Surname
-      github: /
-      id: Status ID
-      image: img/contributor.png
+    - name: Giuliano
+      github: https://github.com/gmega
+      id: gmega
+      image: img/dmitry.png
 
-    - name: Name Surname
-      github: /
-      id: Status ID
-      image: img/contributor.png
+    - name: Mark
+      github: https://github.com/markspanbroek
+      id: markspanbroek
+      image: img/dmitry.png
 
-    - name: Name Surname
-      github: /
-      id: Status ID
-      image: img/contributor.png
+    - name: Eric
+      github: https://github.com/emizzle
+      id: emizzle
+      image: img/dmitry.png
 
-    - name: Name Surname
-      github: /
-      id: Status ID
-      image: img/contributor.png
+    - name: Adam
+      github: https://github.com/AuHau
+      id: AuHau
+      image: img/dmitry.png
 
-    - name: Name Surname
-      github: /
-      id: Status ID
-      image: img/contributor.png
+    - name: Arnaud
+      github: https://github.com/2-towns
+      id: 2-towns
+      image: img/dmitry.png
 
-    - name: Name Surname
+    - name: Slava
+      github: https://github.com/veaceslavdoina
+      id: veaceslavdoina
+      image: img/dmitry.png
+
+    - name: Marcin
+      github: https://github.com/marcinczenko
+      id: marcinczenko
+      image: img/dmitry.png
+
+    - name: Ben
+      github: https://github.com/benbierens
+      id: benbierens
+      image: img/dmitry.png
+
+    - name: Rahul
+      github: https://github.com/munna0908
+      id: munna0908
+      image: img/dmitry.png
+
+    - name: Chrys
+      github: https://github.com/cnanakos
+      id: cnanakos
+      image: img/dmitry.png
+
+    - name: Leo
       github: /
-      id: Status ID
-      image: img/contributor.png
+      id: leobago
+      image: img/dmitry.png
+
+    - name: Balazs
+      github: https://github.com/bkomuves
+      id: bkomuves
+      image: img/dmitry.png
+
+    - name: Mohammed
+      github: https://github.com/mghazwi
+      id: mghazwi
+      image: img/dmitry.png

@@ -5,6 +5,23 @@
   box-sizing: border-box;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  background: var(--dark-30);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--green-10);
+  border-radius: 10px;
+}
+
 /* consistent whitespace */
 ul,
 ol,
@@ -17,6 +34,7 @@ html {
   min-height: 100%;
   overflow-x: hidden;
   --max-width: 1400px;
+  scroll-behavior: smooth;
 }
 
 html,
@@ -37,7 +55,15 @@ body > main {
 
 section:not(.fluid) {
   max-width: var(--max-width);
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 1001px) {
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 /* page layout */
@@ -46,14 +72,7 @@ body {
   flex-direction: column;
   font-size: 14px;
   --border-radius: 8px;
-
-  @media (max-width: 1000px) {
-    --padding-section: 2em 1em;
-  }
-
-  @media (min-width: 1001px) {
-    --padding-section: 2em 3em;
-  }
+  --padding-section: 2em 1em;
 
   > header {
     @media (max-width: 800px) {
@@ -69,7 +88,7 @@ body {
     background-repeat: no-repeat;
     background-size: auto 325px;
     background-color: var(--dark-10);
-    padding: var(--padding-section);
+    /* padding: var(--padding-section); */
     position: relative;
 
     @media (min-width: 1401px) {
@@ -80,135 +99,140 @@ body {
       background-position: left bottom;
     }
 
-    > div:not(.background) {
+    > div:first-child {
       max-width: var(--max-width);
       margin: auto;
-    }
+      padding: var(--padding-section);
 
-    a {
-      transition: border-color 0.5s;
-      border-bottom: 1px solid transparent;
-      display: inline-flex;
+      a {
+        transition: border-color 0.5s;
+        border-bottom: 1px solid transparent;
+        display: inline-flex;
 
-      &:hover {
-        border-color: var(--green-10);
-      }
-    }
-
-    > div:first-child {
-      display: flex;
-      justify-content: space-between;
-
-      @media (max-width: 800px) {
-        flex-direction: column;
-        gap: 2em;
+        &:hover {
+          border-color: var(--green-10);
+        }
       }
 
-      span {
-        color: var(--light-10);
-        font-size: 2em;
-        font-weight: 400;
-        align-self: flex-start;
-        z-index: 1;
-      }
-
-      nav {
-        z-index: 1;
-        position: relative;
-      }
-
-      nav:first-child {
+      > div:first-child {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-      }
+        justify-content: space-between;
 
-      nav + nav {
-        margin-top: 3em;
+        @media (max-width: 800px) {
+          flex-direction: column;
+          gap: 2em;
+        }
 
-        a {
-          margin-right: 3em;
+        span {
+          color: var(--light-10);
+          font-size: 2em;
+          font-weight: 400;
+          align-self: flex-start;
+          z-index: 1;
+        }
+
+        nav {
+          z-index: 1;
           position: relative;
         }
 
-        a:first-child::after {
-          content: "/";
-          margin-right: 1.5em;
-          margin-left: 1.8em;
-          color: var(--grey-10);
-          position: absolute;
-          right: -45px;
+        nav:first-child {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        nav + nav {
+          margin-top: 3em;
+
+          a {
+            margin-right: 3em;
+            position: relative;
+          }
+
+          a:first-child::after {
+            content: "/";
+            margin-right: 1.5em;
+            margin-left: 1.8em;
+            color: var(--grey-10);
+            position: absolute;
+            right: -45px;
+          }
+        }
+
+        a {
+          font-weight: 600;
+          color: var(--light-20);
+          line-height: 1.6em;
+          display: inline-block;
         }
       }
 
-      a {
-        font-weight: 600;
-        color: var(--light-20);
-        line-height: 1.6em;
-        display: inline-block;
+      > div:nth-child(2) {
+        margin-top: 3em;
+
+        h5 {
+          font-size: 2.5em;
+          line-height: 1.07em;
+          font-weight: 300;
+          color: var(--light-10);
+          max-width: 350px;
+          margin: 0;
+          z-index: 1;
+          position: relative;
+
+          &::after {
+            content: " ";
+            border-bottom: 2px solid var(--green-10);
+            width: 27px;
+            margin-top: 0.5em;
+            display: block;
+          }
+        }
+
+        p {
+          color: var(--grey-20);
+          z-index: 1;
+          position: relative;
+        }
+      }
+
+      > div:nth-child(3) {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2em;
+
+        > * {
+          position: relative;
+          z-index: 1;
+        }
+
+        @media (max-width: 800px) {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 1em;
+        }
+
+        p,
+        a {
+          color: var(--light-20);
+          margin: 0;
+          display: inline-block;
+        }
+
+        p:last-child {
+          font-size: 1.2em;
+          color: var(--light-10);
+
+          u {
+            font-weight: bold;
+          }
+        }
       }
     }
 
-    > div:nth-child(2) {
-      margin-top: 3em;
-
-      h5 {
-        font-size: 2.5em;
-        line-height: 1.07em;
-        font-weight: 300;
-        color: var(--light-10);
-        max-width: 350px;
-        margin: 0;
-        z-index: 1;
-        position: relative;
-
-        &::after {
-          content: " ";
-          border-bottom: 2px solid var(--green-10);
-          width: 27px;
-          margin-top: 0.5em;
-          display: block;
-        }
-      }
-
-      p {
-        color: var(--grey-20);
-        z-index: 1;
-        position: relative;
-      }
-    }
-
-    > div:nth-child(3) {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 2em;
-
-      > * {
-        position: relative;
-        z-index: 1;
-      }
-
-      @media (max-width: 800px) {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1em;
-      }
-
-      p,
-      a {
-        color: var(--light-20);
-        margin: 0;
-        display: inline-block;
-      }
-
-      p:last-child {
-        font-size: 1.2em;
-        color: var(--light-10);
-
-        u {
-          font-weight: bold;
-        }
-      }
+    .background {
+      padding: 1em;
     }
   }
 

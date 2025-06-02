@@ -1,0 +1,60 @@
+.github-slider {
+  min-height: 150px;
+  overflow-y: hidden;
+
+  .slider-item {
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid rgb(0, 0, 0);
+    height: 84px;
+    width: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* transform: translateX(50%); */
+
+    img {
+      border-radius: 50%;
+    }
+    .tooltip {
+      visibility: hidden;
+      width: 120px;
+      background-color: var(--grey-24);
+      color: #fff;
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 6px;
+      bottom: -35px;
+      left: -22;
+      position: absolute;
+      z-index: 1;
+      border-radius: 8px;
+      padding: 4px 10px;
+      font-family: Inter;
+      font-weight: 600;
+      font-size: 1em;
+      line-height: 20px;
+
+      &::after {
+        content: " ";
+        position: absolute;
+        bottom: 100%; /* At the top of the tooltip */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent var(--grey-24) transparent;
+      }
+    }
+
+    &:hover .tooltip {
+      visibility: visible;
+    }
+  }
+
+  &:hover {
+    .slider-item {
+      animation-play-state: paused;
+    }
+  }
+}

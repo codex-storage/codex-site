@@ -1,13 +1,75 @@
 .news {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1em;
+  width: 100%;
+
+  @media (min-width: 801px) and (max-width: 1400px) {
+    margin-left: 1em;
+  }
+
+  @media (max-width: 800px) {
+    align-items: start;
+    flex: 0;
+  }
+
   main {
     display: flex;
-    gap: 1.5em;
+    align-items: center;
+    gap: 3em;
+    overflow-x: hidden;
+    cursor: grab;
+    padding-right: 1em;
+    width: 900px;
+    scroll-behavior: initial;
+
+    @media (min-width: 1301px) {
+      padding-left: 400px;
+    }
+
+    @media (min-width: 1001px) and (max-width: 1300px) {
+      padding-left: 350px;
+    }
+
+    @media (min-width: 801px) and (max-width: 1000px) {
+      padding-left: 250px;
+    }
+
+    @media (max-width: 800px) {
+      padding-left: 1em;
+      margin-right: 0;
+    }
+
+    @media (pointer: fine), (pointer: none) {
+      overflow-x: scroll;
+    }
+
+    /* https://habr.com/en/sandbox/163605/ */
+    @media (pointer: coarse) {
+      overflow-x: auto;
+    }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
     div {
-      width: 360;
+      min-width: 360px;
+      max-width: 360px;
+      user-select: none;
+      cursor: grabbing;
+    }
+
+    div {
+      min-width: 360;
       height: 160;
       border-radius: 16px;
       background-color: var(--dark-50);
       padding: 2em;
+      user-select: none;
 
       h3 {
         font-family: Azeret Mono;
