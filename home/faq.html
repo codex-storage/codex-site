@@ -1,0 +1,23 @@
+<section @name="faq" class="faq">
+  <header>
+    <p>FAQS [+]</p>
+    <span>08</span>
+  </header>
+  <main>
+    <div>
+      <h3>Questions you might like answers to</h3>
+      <div class="tags">
+        <span>General</span>
+        <span>Technical</span>
+        <span>Resources</span>
+        <span>Support</span>
+      </div>
+    </div>
+    <div>
+      <details class="{ item.tags }" :for="item in faq">
+        <summary>{ item.title }</summary>
+        <p>{item.content}</p>
+      </details>
+    </div>
+  </main>
+</section>

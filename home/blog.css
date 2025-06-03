@@ -97,13 +97,14 @@
 
         &[role="complementary"] {
           display: flex;
-          flex: 1;
+          flex: 1 0;
 
           header {
             height: auto;
 
             @media (min-width: 701px) {
               width: 40%;
+              max-width: 40%;
               order: 1;
             }
 
@@ -229,6 +230,32 @@
         display: flex;
         flex-direction: column;
         gap: 1em;
+      }
+    }
+
+    article {
+      transition: background-color 1s;
+      cursor: pointer;
+      border-radius: 12px;
+      overflow: hidden;
+
+      header {
+        overflow: hidden;
+      }
+
+      img {
+        transition: transform 0.3s ease;
+        object-fit: cover;
+        /* width: 100%;
+        height: 100%; */
+      }
+
+      &:hover {
+        background-color: var(--grey-100);
+
+        img {
+          transform: scale(1.1);
+        }
       }
     }
   }

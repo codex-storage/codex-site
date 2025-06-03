@@ -42,6 +42,7 @@
         a {
           font-size: 1em;
           color: #000;
+          font-weight: 500;
         }
 
         span {
@@ -160,10 +161,17 @@
       user-select: none;
       min-width: 315px;
       max-width: 315px;
+      transition: 0.5s box-shadow, 0.5s border-color;
 
+      &.default {
+        border-color: var(--green-20);
+        box-shadow: 0 4px 10px rgba(0, 128, 0, 0.3);
+      }
+
+      a,
       a:visited {
         color: #000;
-        font-weight: 600;
+        font-weight: 500;
       }
     }
 
@@ -187,6 +195,7 @@
       a {
         font-size: 1em;
         color: #000;
+        font-weight: 500;
 
         &:visited {
           color: #000;

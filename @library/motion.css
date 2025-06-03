@@ -25,11 +25,11 @@ h1 + p + * {
 
 /* view transitions */
 article {
-  view-transition-name: article;
+  /* view-transition-name: article; */
 }
 
 /* view transition (scales down the old page) */
-::view-transition-old(article) {
+/* ::view-transition-old(article) {
   transform: scale(1.2) translateY(2em);
   transition: 0.8s;
-}
+} */

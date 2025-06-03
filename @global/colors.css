@@ -6,6 +6,8 @@
   --dark-40: #2f2f2f;
   --dark-50: #232323;
   --dark-60: rgb(22, 22, 22);
+  --dark-70: rgba(0, 0, 0, 0.2);
+  --dark-80: rgba(0, 0, 0, 0.6);
   --light-10: #ffffff;
   --light-20: #cbcbcb;
   --light-30: #f8f8f8;
@@ -32,6 +34,7 @@
   --grey-120: #484848;
   --grey-130: #a5aaad;
   --grey-140: #262626;
+  --grey-150: rgba(248, 248, 248, 1);
   --green-10: #6ccc93;
   --green-20: #7fe3a8;
   --green-11: 108, 204, 147;

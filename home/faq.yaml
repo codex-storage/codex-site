@@ -1,0 +1,30 @@
+faq:
+  - title: What is Codex?
+    content: |
+      Codex is a state-of-the-art, decentralized storage protocol that provides a solution for highly durable data storage with high decentralization, aiming to resist censorship and prevent single points of failure inherent in centralized systems.
+    tags: "default general"
+
+  - title: How is Codex different from centralized storage solutions (eg. Google Cloud)?
+    content: |
+      Codex is a state-of-the-art, decentralized storage protocol that provides a solution for highly durable data storage with high decentralization, aiming to resist censorship and prevent single points of failure inherent in centralized systems.
+    tags: general
+
+  - title: What kind of durability does Codex promise?
+    content: |
+      Codex is a state-of-the-art, decentralized storage protocol that provides a solution for highly durable data storage with high decentralization, aiming to resist censorship and prevent single points of failure inherent in centralized systems.
+    tags: technical
+
+  - title: What is Erasure Coding and how does it relate to data storage in Codex?
+    content: |
+      Codex is a state-of-the-art, decentralized storage protocol that provides a solution for highly durable data storage with high decentralization, aiming to resist censorship and prevent single points of failure inherent in centralized systems.
+    tags: technical
+
+  - title: Is Codex part of Logos?
+    content: |
+      Codex is a state-of-the-art, decentralized storage protocol that provides a solution for highly durable data storage with high decentralization, aiming to resist censorship and prevent single points of failure inherent in centralized systems.
+    tags: resources
+
+  - title: How does Codex compare to other decentralized storage solutions currently out on the market?
+    content: |
+      Codex is a state-of-the-art, decentralized storage protocol that provides a solution for highly durable data storage with high decentralization, aiming to resist censorship and prevent single points of failure inherent in centralized systems.
+    tags: support

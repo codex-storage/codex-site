@@ -1,7 +1,7 @@
 <section @name="team" class="team">
   <header>
     <p>CORE CONTRIBUTORS [+]</p>
-    <span>{ team.members.length }</span>
+    <span>06</span>
   </header>
   <main>
     <div>
@@ -12,7 +12,11 @@
         </div>
         <span>{ team.default.id }</span>
       </div>
-      <img src="{ team.default.image  }" alt="Dmitry" />
+      <img
+        src="{ team.default.image  }"
+        alt="Dmitry"
+        id="main-contributor-image"
+      />
       <div class="careers">
         <icon src="icon/team/careers.svg"></icon>
         <span>Careers</span>
@@ -25,7 +29,11 @@
     </div>
   </main>
   <footer>
-    <div class="contributor" :for="member in team.members">
+    <div
+      class="contributor"
+      :for="member,i in team.members"
+      id="contributor-{ i }"
+    >
       <img
         src="{ member.image }"
         alt="{ member.name }"
@@ -37,7 +45,7 @@
         <p>{ member.name }</p>
         <span>{ member.id }</span>
       </div>
-      <a href="{ member.github }">Github profile -></a>
+      <a href="{ member.github }" target="_blank">Github profile -></a>
     </div>
   </footer>
 </section>
