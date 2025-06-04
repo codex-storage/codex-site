@@ -75,6 +75,10 @@ body {
   --padding-section: 2em 1em;
 
   > header {
+    svg {
+      color: white;
+    }
+
     @media (max-width: 800px) {
       position: sticky;
       top: 0;
@@ -165,6 +169,11 @@ body {
           color: var(--light-20);
           line-height: 1.6em;
           display: inline-block;
+          transition: 0.5s color;
+
+          &:hover {
+            color: #fff;
+          }
         }
       }
 
@@ -218,6 +227,11 @@ body {
           color: var(--light-20);
           margin: 0;
           display: inline-block;
+          transition: 0.5s color;
+
+          &:hover {
+            color: #fff;
+          }
         }
 
         p:last-child {

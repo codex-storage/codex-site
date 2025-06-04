@@ -1,0 +1,122 @@
+.about {
+  background-color: var(--green-12);
+  min-height: 95vh;
+
+  > header {
+    padding: var(--padding-section);
+    max-width: var(--max-width);
+    margin: auto;
+  }
+
+  main {
+    display: flex;
+    align-items: center;
+    padding: var(--padding-section);
+    max-width: var(--max-width);
+    margin: auto;
+    gap: 1em;
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+    }
+
+    > div:first-child {
+      flex: 1;
+
+      span {
+        font-weight: 400;
+        font-size: 1em;
+        color: var(--grey-160);
+      }
+
+      h3 {
+        font-weight: 500;
+        text-decoration-style: solid;
+        text-decoration-thickness: 0%;
+        line-height: 1em;
+        margin-bottom: 0.25em;
+
+        @media (min-width: 1001px) {
+          font-size: 4em;
+        }
+
+        @media (max-width: 1000px) {
+          font-size: 3em;
+
+          div {
+            display: inline;
+          }
+        }
+      }
+
+      b {
+        font-weight: 600;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 1.25em;
+        max-width: 800px;
+        color: var(--dark-80);
+      }
+    }
+
+    > div + div {
+      background-color: white;
+      padding: 2em;
+      border-radius: 16px;
+      border: 1px solid var(--dark-70);
+
+      header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      img {
+        mix-blend-mode: difference;
+        position: relative;
+        right: -28px;
+      }
+
+      footer {
+        position: relative;
+        margin-top: -9em;
+
+        h3 {
+          font-size: 3em;
+          font-weight: 500;
+          margin-bottom: 0.25em;
+          margin-top: 0;
+        }
+
+        p {
+          font-weight: 400;
+          font-size: 1em;
+          color: var(--dark-80);
+          margin-bottom: 0em;
+        }
+
+        span {
+          color: var(--grey-170);
+          font-size: 0.9em;
+        }
+
+        a {
+          display: inline-block;
+          margin-top: 2em;
+          border: 0.56px solid #000;
+          border-radius: 100px;
+          padding: 8px 24px;
+          color: #000;
+          transition: 0.5s color, 0.5s background-color;
+
+          &:hover {
+            background-color: #000;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
