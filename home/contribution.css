@@ -3,7 +3,6 @@
 
   section {
     background-image: url(/img/disk.webp);
-    background-size: contain;
     background-repeat: no-repeat;
     background-position: 30%;
     color: var(--light-10);

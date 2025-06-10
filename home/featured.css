@@ -1,5 +1,23 @@
 .featured {
+  background-color: var(--grey-27);
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  > header {
+    padding: var(--padding-section);
+    max-width: var(--max-width);
+    margin: 0 auto;
+    width: 100%;
+  }
+
   main {
+    padding: var(--padding-section);
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
     margin-top: 2em;
 
     h3 {
@@ -55,6 +73,9 @@
 
       .resource {
         border-radius: 8px;
+
+        @media (max-width: 600px) {
+        }
 
         img {
           width: 100%;

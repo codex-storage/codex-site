@@ -5,7 +5,7 @@
   width: 100%;
 
   @media (min-width: 801px) and (max-width: 1400px) {
-    margin-left: 1em;
+    /* margin-left: 1em; */
   }
 
   @media (max-width: 800px) {

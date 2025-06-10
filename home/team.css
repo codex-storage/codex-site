@@ -1,5 +1,8 @@
 .team {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   @media (min-width: 1201px) {
     margin-bottom: 0;
@@ -11,11 +14,14 @@
 
   img {
     user-select: none;
+    max-width: 100%;
   }
 
   main {
     max-width: var(--max-width);
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
 
     > div {
       display: flex;

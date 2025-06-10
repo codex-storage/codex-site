@@ -5,7 +5,7 @@ sections: false
 ---
 [about]
 [featured]
-[contribution]
 [team]
+[contribution]
 [faq]
 [blog]

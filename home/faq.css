@@ -1,4 +1,8 @@
 .faq {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   h3 {
     font-weight: 500;
     font-size: 3em;
@@ -11,7 +15,6 @@
   > main {
     display: flex;
     gap: 1em;
-    flex: 1;
 
     @media (max-width: 1200px) {
       flex-direction: column;
@@ -25,7 +28,8 @@
       .tags {
         display: flex;
         align-items: center;
-        gap: 1em;
+        flex-wrap: wrap;
+        gap: 0.5em;
 
         @media (max-width: 1200px) {
           margin-bottom: 1em;
@@ -81,7 +85,7 @@
             --background-icon: url(/img/faq/plus.svg);
             content: " ";
             height: 32px;
-            width: 32px;
+            min-width: 32px;
             background-image: var(--background-icon);
           }
         }
