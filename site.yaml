@@ -19,6 +19,10 @@ port: 8085
 origin: https://codex.storage
 #og: /img/og.jpg
 
+hero:
+  video: /img/codex.mp4
+  poster: /img/poster.jpg
+
 news:
   - title: Join testnet
     message: Codex is now in Alpha testing. Come help us build and test Codex.

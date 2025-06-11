@@ -9,6 +9,7 @@
     background-color: #000;
     border-radius: 16px;
     padding: 1em;
+    --thumbnail: url(/img/poster.jpg);
 
     > div:first-child {
       min-width: 155px;

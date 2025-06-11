@@ -109,7 +109,8 @@
     .video {
       display: flex;
 
-      div {
+      .video-player {
+        --thumbnail: url(/img/poster.jpg);
         background-color: var(--dark-0);
         width: 220px;
         height: 90px;

@@ -1,0 +1,57 @@
+.video-player {
+  background-image: var(--thumbnail);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  dialog {
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    /* box-shadow: 0 4px 32px rgba(0, 0, 0, 0.3); */
+    /* Center vertically and horizontally */
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.35s, transform 0.35s;
+    transform: scale(0);
+    opacity: 0;
+
+    &[open] {
+      opacity: 1;
+      transform: scale(1);
+
+      @starting-style {
+        transform: scale(0);
+        opacity: 0;
+      }
+    }
+
+    &::backdrop {
+      background: rgba(0, 0, 0, 0.8);
+    }
+
+    video {
+      background-color: black;
+      outline: none;
+
+      @media (max-width: 600px) {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
