@@ -72,6 +72,8 @@
       border-radius: 16px;
       border: 1px solid var(--dark-70);
       max-width: 100%;
+      transform-style: preserve-3d;
+      transform: perspective(1000px);
 
       header {
         display: flex;
@@ -89,12 +91,14 @@
       footer {
         position: relative;
         margin-top: -9em;
+        transform: translateZ(20px);
 
         h3 {
           font-size: 3em;
           font-weight: 500;
           margin-bottom: 0.25em;
           margin-top: 0;
+          transform: translateZ(20px);
         }
 
         p {
@@ -102,11 +106,13 @@
           font-size: 1em;
           color: var(--dark-80);
           margin-bottom: 0em;
+          transform: translateZ(20px);
         }
 
         span {
           color: var(--grey-170);
           font-size: 0.9em;
+          transform: translateZ(20px);
         }
 
         a {
