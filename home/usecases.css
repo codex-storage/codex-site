@@ -170,6 +170,10 @@
   .embla-container {
     display: flex;
     gap: 1em;
+
+    @media (min-width: 1001px) {
+      height: 100%;
+    }
   }
 
   .embla-slide {
