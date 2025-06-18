@@ -53,19 +53,6 @@ body > main {
   flex: 1;
 }
 
-section:not(.fluid) {
-  max-width: var(--max-width);
-  margin-left: auto;
-  margin-right: auto;
-
-  @media (min-width: 1001px) {
-    min-height: 95vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-}
-
 /* page layout */
 body {
   margin: 0 auto;
@@ -251,11 +238,29 @@ body {
   }
 
   section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* @media (min-width: 1001px) { */
+    min-height: 95vh;
+    /* } */
+
     &:not(.fluid) {
+      padding: var(--padding-section);
+
+      max-width: var(--max-width);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &.fluid {
       padding: var(--padding-section);
     }
 
-    header {
+    > header {
       font-family: "Azeret Mono", monospace;
       font-optical-sizing: auto;
       font-style: normal;
@@ -269,6 +274,22 @@ body {
 
       span {
         color: var(--subheader-color, var(--grey-70));
+      }
+    }
+
+    &.fluid {
+      > header,
+      > main,
+      > footer {
+        padding: var(--padding-section);
+        max-width: var(--max-width);
+        margin-right: auto;
+        margin-left: auto;
+        width: 100%;
+      }
+
+      > main {
+        display: flex;
       }
     }
   }

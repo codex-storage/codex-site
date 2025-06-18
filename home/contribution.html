@@ -1,28 +1,26 @@
-<div @name="contribution" class="contribution">
-  <section>
-    <header>
-      <p>CONTRIBUTORS [-]</p>
-      <span>07</span>
-    </header>
+<section @name="contribution" class="contribution fluid">
+  <header>
+    <p>CONTRIBUTORS [-]</p>
+    <span>07</span>
+  </header>
 
-    <main>
-      <div>
-        <h3>Contribute to Codex</h3>
-        <p>
-          Codex is an <b>open source</b> initiative in which anyone can get
-          involved
-        </p>
-      </div>
+  <main>
+    <div>
+      <h3>Contribute to Codex</h3>
+      <p>
+        Codex is an <b>open source</b> initiative in which anyone can get
+        involved
+      </p>
+    </div>
 
-      <div class="contributors">
-        <github-slider :items="contribution.people"></github-slider>
-      </div>
+    <div class="contributors">
+      <github-slider :items="contribution.people"></github-slider>
+    </div>
 
-      <p>There is No Web3 Without Truly <b>Decentralized</b> Storage</p>
-    </main>
-    <footer>
-      <p>View Contributors 🡪</p>
-      <navi :items="contribution.links" />
-    </footer>
-  </section>
-</div>
+    <p>There is No Web3 Without Truly <b>Decentralized</b> Storage</p>
+  </main>
+  <footer>
+    <p>View Contributors 🡪</p>
+    <navi :items="contribution.links" />
+  </footer>
+</section>

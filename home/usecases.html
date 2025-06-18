@@ -1,0 +1,47 @@
+<section @name="usecases" class="usecases fluid">
+  <header>
+    <p>USECASES [-]</p>
+    <span>03</span>
+  </header>
+  <main>
+    <ul>
+      <li
+        :for="usecase, idx in usecases"
+        data-index="{ idx }"
+        class="li-initial{ idx }"
+      >
+        <icon src="{ usecase.icon }" />
+        <span>{ usecase.category }</span>
+      </li>
+    </ul>
+    <div class="embla">
+      <div class="embla-container">
+        <div
+          :for="usecase, idx in usecases"
+          id="content-{ idx }"
+          class="content initial{ idx } embla-slide"
+        >
+          <header>
+            <h2>{ usecase.title }</h2>
+          </header>
+          <main>
+            <p>{ usecase.description1 }</p>
+            <p>{ usecase.description2 }</p>
+          </main>
+          <footer>
+            <icon src="{ usecase.icon }" />
+          </footer>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <h3>
+      Decentralized Storage<br />
+      Applications
+    </h3>
+    <a href=""
+      >Explore More <icon src="icon/usecases/arrow-right.svg"></icon
+    ></a>
+  </footer>
+</section>

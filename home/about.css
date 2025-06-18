@@ -5,26 +5,12 @@
   background-repeat: no-repeat;
   background-position: center;
   background-blend-mode: darken;
-  min-height: 95vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-  > header {
-    padding: var(--padding-section);
-    max-width: var(--max-width);
-    margin: 0 auto;
-    width: 100%;
-  }
 
   main {
-    display: flex;
-    align-items: center;
-    padding: var(--padding-section);
-    max-width: var(--max-width);
-    margin: 0 auto;
     gap: 1em;
     width: 100%;
+    align-items: center;
+    display: flex;
 
     @media (max-width: 1000px) {
       flex-direction: column;
@@ -77,10 +63,10 @@
       border: 1px solid var(--dark-70);
       max-width: 100%;
       transform-style: preserve-3d;
-      transform: perspective(500px);
+      transform: perspective(1000px);
 
       .inner {
-        transform: translateZ(20px);
+        transform: translateZ(30px);
         background-color: white;
         padding: 2em;
         border-radius: 16px;

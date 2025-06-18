@@ -89,6 +89,17 @@
           color: var(--green-14);
           margin: 0;
           line-height: 0.5em;
+          position: relative;
+
+          &::before {
+            content: " ";
+            height: 2px;
+            width: 44px;
+            background-color: var(--green-14);
+            display: inline-block;
+            position: absolute;
+            top: -1em;
+          }
         }
 
         b {
@@ -119,6 +130,11 @@
           padding: 8px 24px;
           align-self: flex-start;
           transition: all 0.5s ease-in-out;
+
+          &:hover {
+            background-color: var(--green-14);
+            color: var(--dark-0);
+          }
         }
       }
     }
@@ -131,7 +147,7 @@
 
       @media (max-width: 1000px) {
         order: 0;
-        margin-bottom: 6em;
+        margin-bottom: 10em;
         margin-top: 3em;
       }
 

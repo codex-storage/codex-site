@@ -1,8 +1,5 @@
 .team {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 
   @media (min-width: 1201px) {
     margin-bottom: 0;
