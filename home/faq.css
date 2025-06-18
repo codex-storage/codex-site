@@ -47,10 +47,12 @@
           padding: 8px 24px;
           transition: color 0.5s, background-color 0.5s;
 
-          &[aria-selected],
-          &:hover {
-            background-color: #000;
-            color: white;
+          @media (min-width: 801px) {
+            &[aria-selected],
+            &:hover {
+              background-color: #000;
+              color: white;
+            }
           }
         }
       }

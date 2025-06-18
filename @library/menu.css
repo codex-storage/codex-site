@@ -8,20 +8,24 @@
   position: sticky;
 
   > div:first-child {
-    background-color: var(--dark-40);
-    padding: 1.5em 3em;
+    background-color: var(--dark-0);
     z-index: 1;
 
-    @media (min-width: 801px) {
-      padding: 1.5em 3em;
-    }
-
     @media (max-width: 800px) {
-      padding: 0.15em 1.5em;
-      cursor: pointer;
+      /* padding: 0.15em 1.5em; */
+      width: 100%;
+      justify-content: space-between;
+      display: flex;
+      align-items: center;
 
       svg {
         width: 28px;
+      }
+    }
+
+    @media (min-width: 801px) {
+      > .icon {
+        display: none;
       }
     }
   }
@@ -234,11 +238,21 @@
     }
   }
 
-  .icon + .icon {
-    @media (min-width: 801px) {
-      display: none;
+  .logo {
+    display: inline-block;
+    background-color: var(--dark-40);
+    cursor: pointer;
+
+    @media (max-width: 800px) {
+      padding: 2px 2em;
     }
 
+    @media (min-width: 801px) {
+      padding: 1.5em 3em;
+    }
+  }
+
+  .logo + .icon {
     @media (max-width: 800px) {
       position: absolute;
       top: 0;
@@ -252,6 +266,8 @@
       & + .icon {
         opacity: 0;
         z-index: -1;
+        right: 20px;
+        position: relative;
       }
 
       &:hover {

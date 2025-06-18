@@ -1,5 +1,10 @@
 .about {
   background-color: var(--green-12);
+  background-image: url(/img/about.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: darken;
   min-height: 95vh;
   display: flex;
   justify-content: center;
@@ -66,14 +71,20 @@
       }
     }
 
-    > div + div {
+    > .tilt {
       background-color: white;
-      padding: 2em;
       border-radius: 16px;
       border: 1px solid var(--dark-70);
       max-width: 100%;
       transform-style: preserve-3d;
-      transform: perspective(1000px);
+      transform: perspective(500px);
+
+      .inner {
+        transform: translateZ(20px);
+        background-color: white;
+        padding: 2em;
+        border-radius: 16px;
+      }
 
       header {
         display: flex;

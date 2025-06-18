@@ -23,6 +23,9 @@ hero:
   video: /img/codex.mp4
   poster: /img/poster.jpg
 
+app:
+  version: 0.1.0
+
 news:
   - title: Join testnet
     message: Codex is now in Alpha testing. Come help us build and test Codex.

@@ -93,5 +93,9 @@
   p + a {
     font-weight: 700;
     color: var(--dark-0);
+
+    svg {
+      margin-left: 0.25em;
+    }
   }
 }

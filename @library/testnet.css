@@ -16,6 +16,35 @@
       height: 90px;
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      position: relative;
+
+      > .icon {
+        position: relative;
+        left: 18px;
+      }
+
+      .image {
+        background-image: url(/img/testnet.jpg);
+        width: 155px;
+        height: 76px;
+        background-size: 300%;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .image + .icon {
+        position: relative;
+        left: -18px;
+      }
+
+      .shield {
+        position: absolute;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+      }
     }
 
     > div:nth-child(2) {

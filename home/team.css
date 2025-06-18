@@ -33,6 +33,10 @@
         flex-direction: column;
       }
 
+      @media (max-width: 1200px) {
+        background-size: 200%;
+      }
+
       .profile {
         display: flex;
         gap: 6em;

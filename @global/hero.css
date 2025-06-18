@@ -4,9 +4,10 @@
   height: 720px;
   background-image: url(/img/hero.webp);
   background-blend-mode: lighten;
-  background-position: right -400px top -300px;
+  background-position: center right -450px;
   background-repeat: no-repeat;
   position: relative;
+  min-height: 95vh;
 
   @media (min-width: 1001px) {
     background-size: 1000px;
@@ -109,11 +110,21 @@
     .video {
       display: flex;
 
+      > .icon {
+        position: relative;
+        left: 27px;
+      }
+
       .video-player {
         --thumbnail: url(/img/poster.jpg);
         background-color: var(--dark-0);
         width: 220px;
         height: 90px;
+      }
+
+      .video-player + .icon {
+        position: relative;
+        left: -27px;
       }
     }
 

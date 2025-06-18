@@ -94,6 +94,8 @@
 
           header {
             position: relative;
+            border-top-right-radius: var(--border-radius);
+            border-top-left-radius: var(--border-radius);
             /* top: 7px; */
 
             img {
@@ -283,7 +285,7 @@
       }
 
       &:hover {
-        background-color: var(--grey-100);
+        background-color: var(--light-30);
 
         img {
           transform: scale(1.1);

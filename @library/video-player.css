@@ -1,15 +1,15 @@
 .video-player {
   background-image: var(--thumbnail);
-  background-size: cover;
+  background-size: 100%;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: background-size 0.4s ease;
 
   &:hover {
-    opacity: 0.8;
-    transition: opacity 0.3s ease-in-out;
+    background-size: 130%;
   }
 
   dialog {
@@ -48,7 +48,7 @@
       background-color: black;
       outline: none;
 
-      @media (max-width: 600px) {
+      @media (max-width: 700px) {
         width: 100%;
         height: auto;
       }
