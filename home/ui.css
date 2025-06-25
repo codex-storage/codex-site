@@ -1,14 +1,21 @@
 .ui {
   background-color: var(--dark-0);
   background-image: url(/img/ui/ui.png);
-  background-size: 75%;
-  background-position: 200%;
+  background-size: cover;
   position: relative;
   background-repeat: no-repeat;
   min-height: 95vh;
   flex-direction: column;
   display: flex;
   justify-content: center;
+
+  @media (min-width: 1001px) {
+    background-position: 50em;
+  }
+
+  @media (max-width: 1000px) {
+    background-position: 20em;
+  }
 
   > header {
     padding: var(--padding-section);

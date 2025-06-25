@@ -18,118 +18,81 @@ usecases:
     category: Scientific Research Data in Decentralised Science (DeSci)
     icon: /icon/usecases/research.svg
     description1: |
-      Layer 2 solutions, such as Optimistic and ZK-Rollups, are designed to 
-      alleviate congestion on main blockchain networks.  
-      However, these solutions often involve compressing or summarising  
-      transaction data before submitting it to the main chain.
+      Scientific research often produces vast amounts of data that must be preserved for decades or centuries. 
+      Codex offers a robust solution for this critical use case by enabling storage for DeSci data.
     description2: |
-      Codex ensures that every transaction processed on Layer 2 networks is
-      permanently recorded in full form, not just as a summary or hash. 
-      This immutable record-keeping provides a durable and long-lasting archive 
-      of all Layer 2 transactions, which is crucial for future audits, dispute
-      resolutions, and historical analysis.
+      The focus on durability means that critical experimental parameters, methodologies, and contextual information can be stored alongside the data, 
+      ensuring that scientists can fully understand and replicate studies for generations into the future.
 
   - title: AI datasets and RAG Embeddings
     category: AI datasets and RAG Embeddings
     icon: /icon/usecases/ai.svg
     description1: |
-      Layer 2 solutions, such as Optimistic and ZK-Rollups, are designed to 
-      alleviate congestion on main blockchain networks.  
-      However, these solutions often involve compressing or summarising  
-      transaction data before submitting it to the main chain.
+      AI is evolving rapidly, and it is important to have a durable data engine that can store massive datasets for training purposes. 
+      The curation of datasets is a long process, and storing them at one source can risk a single point of failure.
     description2: |
-      Codex ensures that every transaction processed on Layer 2 networks is
-      permanently recorded in full form, not just as a summary or hash. 
-      This immutable record-keeping provides a durable and long-lasting archive 
-      of all Layer 2 transactions, which is crucial for future audits, dispute
-      resolutions, and historical analysis.
+      Hence, it is important to distribute the data in a resource-effective way. 
+      Without the ability to store data in this decentralised, durable manner, costs and risks will spiral out of control.
 
   - title: Secure Storage of Legal Records
     category: Secure Storage of Legal Records
     icon: /icon/usecases/legal.svg
     description1: |
-      Layer 2 solutions, such as Optimistic and ZK-Rollups, are designed to 
-      alleviate congestion on main blockchain networks.  
-      However, these solutions often involve compressing or summarising  
-      transaction data before submitting it to the main chain.
+      Legal precedents, legislative histories, and governmental records form the backbone of our societal structures. 
+      Codex’s tamper-resistant storage ensures the integrity of these crucial documents, making any unauthorised alterations immediately detectable.
     description2: |
-      Codex ensures that every transaction processed on Layer 2 networks is
-      permanently recorded in full form, not just as a summary or hash. 
-      This immutable record-keeping provides a durable and long-lasting archive 
-      of all Layer 2 transactions, which is crucial for future audits, dispute
-      resolutions, and historical analysis.
+      The decentralised nature of the protocol provides a high level of censorship resistance, ensuring that no single entity can manipulate or suppress important 
+      legal or governmental information. This combination of durability and censorship resistance is key for maintaining the rule of law and governmental accountability over extended periods.
 
   - title: Long-Term Medical Records and Genomic Data
     category: Long-Term Medical Records and Genomic Data
     icon: /icon/usecases/medical.svg
     description1: |
-      Layer 2 solutions, such as Optimistic and ZK-Rollups, are designed to 
-      alleviate congestion on main blockchain networks.  
-      However, these solutions often involve compressing or summarising  
-      transaction data before submitting it to the main chain.
+      As personalised medicine advances, the need for secure, long-term storage of individual medical histories and genomic data becomes increasingly vital. 
+      Codex’s advanced encryption and access control mechanisms ensure patients have control over their data, granting and revoking access as needed.
     description2: |
-      Codex ensures that every transaction processed on Layer 2 networks is
-      permanently recorded in full form, not just as a summary or hash. 
-      This immutable record-keeping provides a durable and long-lasting archive 
-      of all Layer 2 transactions, which is crucial for future audits, dispute
-      resolutions, and historical analysis.
+      The protocol’s focus on longevity means that this sensitive information can persist well beyond the lifespan of any single healthcare provider or system, 
+      potentially benefiting multiple generations while maintaining strict privacy controls.
 
   - title: Whistleblower Document Protection
     category: Whistleblower Document Protection
     icon: /icon/usecases/whistleblower.svg
     description1: |
-      Layer 2 solutions, such as Optimistic and ZK-Rollups, are designed to 
-      alleviate congestion on main blockchain networks.  
-      However, these solutions often involve compressing or summarising  
-      transaction data before submitting it to the main chain.
+      Whistleblowers often risk their personal safety by exposing wrongdoings. 
+      Codex provides a secure platform for storing and distributing sensitive documents that unearth corruption or illegal activities.
+      The protocol’s strong encryption and privacy features protect the identity of whistleblowers.
     description2: |
-      Codex ensures that every transaction processed on Layer 2 networks is
-      permanently recorded in full form, not just as a summary or hash. 
-      This immutable record-keeping provides a durable and long-lasting archive 
-      of all Layer 2 transactions, which is crucial for future audits, dispute
-      resolutions, and historical analysis.
+      At the same time, its censorship-resistant nature ensures that once documents are uploaded, they cannot be easily suppressed 
+      or destroyed by powerful entities seeking to hide the truth.
 
   - title: Decentralised Social Media Archives
     category: Decentralised Social Media Archives
     icon: /icon/usecases/media.svg
     description1: |
-      Layer 2 solutions, such as Optimistic and ZK-Rollups, are designed to 
-      alleviate congestion on main blockchain networks.  
-      However, these solutions often involve compressing or summarising  
-      transaction data before submitting it to the main chain.
+      In an era where social media plays a crucial role in shaping public opinion and documenting historical events, there is a growing need 
+      for durable, censorship-resistant archives of social media content. 
+      Codex can be a permanent repository for social media posts, ensuring that important social and political discourse is preserved even if 
+      original platforms remove content or cease operations.
     description2: |
-      Codex ensures that every transaction processed on Layer 2 networks is
-      permanently recorded in full form, not just as a summary or hash. 
-      This immutable record-keeping provides a durable and long-lasting archive 
-      of all Layer 2 transactions, which is crucial for future audits, dispute
-      resolutions, and historical analysis.
+      This use case is fundamental for protecting freedom of speech and maintaining an accurate historical record of public communication. 
+      Decentralised social media projects like Farcaster can solve data storage concerns using a durable data engine.
 
   - title: Cryptographic Keys and Digital Assets
     category: Cryptographic Keys and Digital Assets
     icon: /icon/usecases/crypto.svg
     description1: |
-      Layer 2 solutions, such as Optimistic and ZK-Rollups, are designed to 
-      alleviate congestion on main blockchain networks.  
-      However, these solutions often involve compressing or summarising  
-      transaction data before submitting it to the main chain.
+      As more wealth and identity become tied to digital assets and cryptographic keys, the need for ultra-secure, long-term storage solutions becomes critical. 
+      Codex can serve as a highly durable and private backup solution for cryptocurrency wallets, digital identity documents, and other sensitive cryptographic materials.
     description2: |
-      Codex ensures that every transaction processed on Layer 2 networks is
-      permanently recorded in full form, not just as a summary or hash. 
-      This immutable record-keeping provides a durable and long-lasting archive 
-      of all Layer 2 transactions, which is crucial for future audits, dispute
-      resolutions, and historical analysis.
+      Its encryption and distributed nature provide superior security compared to traditional backup methods, while its durability ensures that 
+      users can recover their digital assets even after long periods.
 
   - title: DataDAOs
     category: DataDAOs
     icon: /icon/usecases/daos.svg
     description1: |
-      Layer 2 solutions, such as Optimistic and ZK-Rollups, are designed to 
-      alleviate congestion on main blockchain networks.  
-      However, these solutions often involve compressing or summarising  
-      transaction data before submitting it to the main chain.
+      DataDAOs are virtual and decentralised governance bodies that aim to collect, classify, preserve and monetise the usage of data curated by the members of a specific DAO. 
+      For example, HuggingFace Datasets do not incentivise the curators of a particular dataset.
     description2: |
-      Codex ensures that every transaction processed on Layer 2 networks is
-      permanently recorded in full form, not just as a summary or hash. 
-      This immutable record-keeping provides a durable and long-lasting archive 
-      of all Layer 2 transactions, which is crucial for future audits, dispute
-      resolutions, and historical analysis.
+      However, with DataDAOs, data curators can monetise their efforts. 
+      These DataDAOs can easily plug into Codex and gain access to durable, censorship-resistant data storage guarantees.

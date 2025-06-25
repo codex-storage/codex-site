@@ -235,6 +235,11 @@ body {
     .background {
       padding: 1em;
     }
+
+    canvas {
+      position: absolute;
+      top: 0;
+    }
   }
 
   section {

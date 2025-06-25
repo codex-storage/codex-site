@@ -1,0 +1,28 @@
+article1:
+  title: 'Bridging Protocols: Integrating Codex with BitTorrent'
+  description: "The world of peer-to-peer file sharing has evolved significantly since the BitTorrent protocol emerged as a revolutionary technology.\_\n\nAlongside the rise of newer decentralised file-sharing and stora..."
+  url: >-
+    https://blog.codex.storage/bridging-protocols-integrating-codex-with-bittorrent/
+  image: >-
+    https://blog.codex.storage/content/images/2025/06/bittorent-integration-article-image.png
+  date: Jun 23, 2025
+article2:
+  title: 'Exploring FileHog: Decentralised Personal Storage with Codex'
+  description: "In a recent Learn-Up session, the Codex team explored the specification for FileHog, a straightforward tool designed to upload entire folders to the Codex decentralised storage network.\_\n\nWhile the co..."
+  url: >-
+    https://blog.codex.storage/exploring-filehog-decentralised-personal-storage-with-codex/
+  image: https://blog.codex.storage/content/images/2025/06/codex-blog-190625.jpg
+  date: Jun 20, 2025
+article3:
+  title: Leveraging TACo for decentralised access control on Codex
+  description: >-
+    Codex and TACo are two decentralised technologies working towards a common
+    goal: restoring user sovereignty over data.
+
+
+    Codex is a distributed file storage protocol designed for durability and
+    censors...
+  url: >-
+    https://blog.codex.storage/leveraging-taco-for-decentralised-access-control-on-codex/
+  image: https://blog.codex.storage/content/images/2025/06/codex-blog-120625.jpg
+  date: Jun 18, 2025

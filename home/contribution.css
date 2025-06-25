@@ -2,6 +2,7 @@
   background-image: url(/img/disk.webp);
   background-repeat: no-repeat;
   background-position: 30%;
+  background-attachment: fixed;
   color: var(--light-10);
   --subheader-color: var(--grey-90);
   background-color: var(--dark-20);

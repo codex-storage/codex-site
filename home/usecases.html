@@ -10,16 +10,18 @@
         data-index="{ idx }"
         class="li-initial{ idx }"
       >
-        <icon src="{ usecase.icon }" />
-        <span>{ usecase.category }</span>
+        <div>
+          <icon src="{ usecase.icon }" />
+          <span>{ usecase.category }</span>
+        </div>
       </li>
     </ul>
     <div class="embla">
-      <div class="embla-container">
+      <div>
         <div
           :for="usecase, idx in usecases"
           id="content-{ idx }"
-          class="content initial{ idx } embla-slide"
+          class="content initial{ idx }"
         >
           <header>
             <h2>{ usecase.title }</h2>
@@ -33,12 +35,22 @@
           </footer>
         </div>
       </div>
+      <div class="controls">
+        <div class="buttons">
+          <button id="embla-prev" type="button" disabled="">
+            <icon src="icon/usecases/embla-arrow-left.svg"></icon></button
+          ><button id="embla-next" type="button" disabled="">
+            <icon src="icon/usecases/embla-arrow-right.svg"></icon>
+          </button>
+        </div>
+        <div id="embla-dots" class="dots"></div>
+      </div>
     </div>
   </main>
   <footer>
     <h3>
-      Decentralized Storage<br />
-      Applications
+      <div>Decentralized Storage</div>
+      <div>Applications</div>
     </h3>
     <a href=""
       >Explore More <icon src="icon/usecases/arrow-right.svg"></icon
