@@ -474,14 +474,12 @@ Particle.prototype = (function (o) {
     gravities = [],
     particles = [],
     grad,
-    gui,
     control;
 
   // Event Listeners
 
   function resize(e) {
     const footer = document.querySelector("body > footer");
-    console.info(footer.clientHeight);
     screenWidth = canvas.width = footer.clientWidth;
     screenHeight = canvas.height = footer.clientHeight;
     bufferCvs.width = screenWidth;
@@ -584,8 +582,6 @@ Particle.prototype = (function (o) {
     }
   }
 
-  // GUI Control
-
   control = {
     particleNum: 100,
   };
@@ -604,23 +600,6 @@ Particle.prototype = (function (o) {
   canvas.addEventListener("mousedown", mouseDown, false);
   canvas.addEventListener("mouseup", mouseUp, false);
   canvas.addEventListener("dblclick", doubleClick, false);
-
-  // GUI
-
-  gui = new dat.GUI();
-  gui
-    .add(control, "particleNum", 0, 500)
-    .step(1)
-    .name("Particle Num")
-    .onChange(function () {
-      var n = (control.particleNum | 0) - particles.length;
-      if (n > 0) addParticle(n);
-      else if (n < 0) removeParticle(-n);
-    });
-  gui
-    .add(GravityPoint, "interferenceToPoint")
-    .name("Interference Between Point");
-  gui.close();
 
   // Start Update
 
