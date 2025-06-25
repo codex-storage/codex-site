@@ -1137,7 +1137,7 @@ const observer = new IntersectionObserver(
         // obs.unobserve(entry.target);
         // Run the effect
         const ts = new TypeShuffle(entry.target);
-        ts.trigger("fx1");
+        ts.trigger("fx6");
       }
     });
   },

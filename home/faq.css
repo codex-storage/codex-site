@@ -1,4 +1,6 @@
 .faq {
+  position: relative;
+
   h3 {
     font-weight: 500;
     font-size: 3em;
@@ -11,6 +13,7 @@
   > main {
     display: flex;
     gap: 1em;
+    z-index: 1;
 
     @media (max-width: 1200px) {
       flex-direction: column;
@@ -115,5 +118,14 @@
         }
       }
     }
+  }
+
+  footer svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: auto;
+    color: var(--light-30);
   }
 }
