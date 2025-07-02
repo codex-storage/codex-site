@@ -138,27 +138,9 @@
   footer {
     display: flex;
     gap: 1em;
-    width: 100%;
-    cursor: grab;
     padding-left: 2em;
     padding-right: 2em;
     mask-image: linear-gradient(to right, #0000, #000 10% 95%, #0000);
-
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    @media (pointer: fine), (pointer: none) {
-      overflow-x: scroll;
-    }
-
-    /* https://habr.com/en/sandbox/163605/ */
-    @media (pointer: coarse) {
-      overflow-x: auto;
-    }
 
     .contributor {
       display: flex;
@@ -170,7 +152,7 @@
       border-radius: var(--border-radius);
       white-space: nowrap;
       user-select: none;
-      min-width: 315px;
+      min-width: 15%;
       max-width: 315px;
       transition: 0.5s box-shadow, 0.5s border-color;
 
@@ -213,5 +195,116 @@
         }
       }
     }
+  }
+
+  .embla {
+    overflow: hidden;
+    --slide-height: 19rem;
+    --slide-spacing: 1rem;
+    --slide-size: 50%;
+
+    > div:first-child {
+      display: flex;
+      gap: 1em;
+      height: 100%;
+
+      @media (min-width: 1001px) {
+        height: 100%;
+      }
+
+      .content {
+        flex: 0 0 100%;
+        min-width: 0;
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    height: 86px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
+
+    .buttons {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+      margin-bottom: 1em;
+
+      button {
+        background-color: transparent;
+        cursor: pointer;
+        padding: 0;
+        margin: 0;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        border: 2px solid var(--color);
+        justify-content: center;
+        color: var(--color);
+        border-radius: 50%;
+
+        &:not(disabled) {
+          --color: black;
+        }
+
+        &:disabled {
+          --color: var(--grey-60);
+        }
+
+        svg {
+          width: 35%;
+          height: 35%;
+        }
+      }
+    }
+
+    .embla-progress {
+      border-radius: 1.8rem;
+      background-color: transparent;
+      position: relative;
+      height: 0.6rem;
+      justify-self: flex-end;
+      align-self: center;
+      width: 13rem;
+      max-width: 90%;
+      overflow: hidden;
+      justify-self: center;
+      transition: opacity 0.3s ease-in-out;
+      width: 8rem;
+      border: 1px solid var(--grey-60);
+
+      > div {
+        background-color: rgb(222, 222, 222);
+        position: absolute;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        left: -100%;
+        animation-name: autoplay-progress;
+        animation-timing-function: linear;
+        animation-iteration-count: 1;
+      }
+
+      &[aria-hidden] {
+        opacity: 0;
+
+        > div {
+          animation-play-state: paused;
+        }
+      }
+    }
+  }
+}
+
+@keyframes autoplay-progress {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(100%, 0, 0);
   }
 }

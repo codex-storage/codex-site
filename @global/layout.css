@@ -61,7 +61,15 @@ body {
   --border-radius: 8px;
   --padding-section: 2em 1em;
 
-  > header {
+> main { 
+  > article { 
+    background: white;
+    z-index: 1;
+    position: relative;
+  }
+}
+
+> header {
     position: sticky;
     top: 0;
     z-index: 3;
