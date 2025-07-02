@@ -57,14 +57,21 @@
     }
 
     div {
-      min-width: 360px;
-      max-width: 360px;
       user-select: none;
       cursor: grabbing;
+
+      @media (min-width: 801px) {
+        min-width: 360px;
+        max-width: 360px;
+      }
+
+      @media (max-width: 800px) {
+        min-width: 75%;
+        max-width: 75%;
+      }
     }
 
     div {
-      min-width: 360;
       height: 160;
       border-radius: 16px;
       background-color: var(--dark-50);
@@ -78,6 +85,7 @@
         line-height: 120%;
         text-transform: uppercase;
         color: white;
+        margin-top: 0;
 
         span {
           color: var(--grey-25);

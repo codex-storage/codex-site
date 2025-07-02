@@ -44,8 +44,6 @@
     }
 
     > div:first-child {
-      min-width: 375px;
-
       @media (max-width: 1000px) {
         order: 1;
       }

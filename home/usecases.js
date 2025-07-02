@@ -1,6 +1,20 @@
 const usecases = document.querySelectorAll(".usecases ul li");
 const items = document.querySelectorAll(".usecases .content");
 
+gsap.registerPlugin(TextPlugin, DrawSVGPlugin);
+gsap.set("#path", { drawSVG: "0%" });
+gsap.to("#path", { drawSVG: "100%", duration: 2, ease: "power1.inOut" });
+
+function animateIcon() {
+  gsap.fromTo(
+    "#path",
+    { drawSVG: "0%" },
+    { drawSVG: "100%", duration: 5, ease: "power1.inOut" }
+  );
+}
+
+animateIcon();
+
 usecases.forEach((usecase) => {
   usecase.addEventListener("click", (e) => {
     usecases.forEach((usecase) => {
@@ -19,6 +33,7 @@ usecases.forEach((usecase) => {
 
     const content = document.getElementById(`content-${index}`);
     content.setAttribute("aria-selected", "true");
+    animateIcon();
   });
 });
 
@@ -188,36 +203,31 @@ if (window.innerWidth <= 1000) {
   createScriptElement(
     "https://unpkg.com/embla-carousel/embla-carousel.umd.js",
     () => {
-      createScriptElement(
-        "https://unpkg.com/embla-carousel-fade/embla-carousel-fade.umd.js",
-        () => {
-          const emblaNode = document.querySelector(".embla");
-          const options = { loop: false };
-          const opacityOptions = { active: 1, inactive: 0.3 }; // adjust as needed
-          const prevBtn = emblaNode.querySelector("#embla-prev");
-          const nextBtn = emblaNode.querySelector("#embla-next");
-          const dotsNode = document.querySelector("#embla-dots");
+      const emblaNode = document.querySelector(".embla");
+      const options = { loop: false };
+      const opacityOptions = { active: 1, inactive: 0.3 }; // adjust as needed
+      const prevBtn = emblaNode.querySelector("#embla-prev");
+      const nextBtn = emblaNode.querySelector("#embla-next");
+      const dotsNode = document.querySelector("#embla-dots");
 
-          const emblaApi = EmblaCarousel(emblaNode, options, []);
+      const emblaApi = EmblaCarousel(emblaNode, options, []);
 
-          const removeTweenScale = setupTweenScale(emblaApi);
+      const removeTweenScale = setupTweenScale(emblaApi);
 
-          const removePrevNextBtnsClickHandlers = addPrevNextBtnsClickHandlers(
-            emblaApi,
-            prevBtn,
-            nextBtn
-          );
-          const removeDotBtnsAndClickHandlers = addDotBtnsAndClickHandlers(
-            emblaApi,
-            dotsNode
-          );
-
-          emblaApi
-            .on("destroy", removeTweenScale)
-            .on("destroy", removePrevNextBtnsClickHandlers)
-            .on("destroy", removeDotBtnsAndClickHandlers);
-        }
+      const removePrevNextBtnsClickHandlers = addPrevNextBtnsClickHandlers(
+        emblaApi,
+        prevBtn,
+        nextBtn
       );
+      const removeDotBtnsAndClickHandlers = addDotBtnsAndClickHandlers(
+        emblaApi,
+        dotsNode
+      );
+
+      emblaApi
+        .on("destroy", removeTweenScale)
+        .on("destroy", removePrevNextBtnsClickHandlers)
+        .on("destroy", removeDotBtnsAndClickHandlers);
     }
   );
 }

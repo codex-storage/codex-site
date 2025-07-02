@@ -4,14 +4,15 @@
   height: 720px;
   background-image: url(/img/hero.webp);
   background-blend-mode: lighten;
-  background-position: center right -450px;
   background-repeat: no-repeat;
   position: relative;
   min-height: 95vh;
+  z-index: 1;
 
   @media (min-width: 1001px) {
     background-size: 1000px;
     flex-direction: column;
+    background-position: center right -450px;
 
     > div:first-child {
       flex: 1;
@@ -35,6 +36,7 @@
     flex-direction: column;
     background-size: 1000px;
     justify-content: flex-end;
+    background-position: center right -650px;
 
     > div:first-child {
       display: flex;
@@ -103,7 +105,7 @@
       position: relative;
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
       flex-direction: column;
     }
 

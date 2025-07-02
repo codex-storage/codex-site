@@ -1,4 +1,7 @@
 .blog {
+  margin-bottom: 500px;
+  background-color: white;
+  
   header {
     margin-bottom: 2em;
   }

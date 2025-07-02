@@ -1,5 +1,6 @@
 .team {
   position: relative;
+  background-color: white;
 
   @media (min-width: 1201px) {
     margin-bottom: 0;

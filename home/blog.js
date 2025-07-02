@@ -1,7 +1,5 @@
 Splitting();
 
-console.info("Splitting text into lines and words");
-
 const lettersAndSymbols = [
   "a",
   "b",

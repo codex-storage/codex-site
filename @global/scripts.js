@@ -1117,6 +1117,21 @@ export class TypeShuffle {
         setTimeout(() => loop(line, cell), (line.position + 1) * 80);
       }
     }
+
+    setTimeout(function () {
+      ts.reset();
+    }, 1000);
+  }
+
+  reset() {
+    for (const line of this.lines) {
+      for (const cell of line.cells) {
+        cell.set(cell.original);
+        cell.color = cell.originalColor;
+        cell.DOM.el.style.color = cell.originalColor;
+      }
+    }
+    this.isAnimating = false;
   }
   /**
    * call the right effect method (defined in this.effects)
@@ -1129,6 +1144,8 @@ export class TypeShuffle {
   }
 }
 
+let ts;
+
 const observer = new IntersectionObserver(
   (entries, obs) => {
     entries.forEach((entry) => {
@@ -1136,7 +1153,7 @@ const observer = new IntersectionObserver(
         // Only run once per element
         // obs.unobserve(entry.target);
         // Run the effect
-        const ts = new TypeShuffle(entry.target);
+        ts = new TypeShuffle(entry.target);
         ts.trigger("fx6");
       }
     });
