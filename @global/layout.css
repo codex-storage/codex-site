@@ -62,15 +62,30 @@ body {
   --padding-section: 2em 1em;
 
   > header {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+
+    &.is-fixed {
+      background: rgba(255, 255, 255, 0.9);
+      transform: translate3d(0, -100%, 0);
+    }
+
+    &.can-animate {
+      transition: transform 0.3s ease, visibility 0s 0.3s linear;
+    }
+
+    &.scroll-up {
+      transform: translate3d(0, 0, 0);
+    }
+
     svg {
       color: white;
     }
 
-    @media (max-width: 800px) {
-      position: sticky;
-      top: 0;
-      z-index: 3;
-    }
+    /* @media (max-width: 800px) { */
+
+    /* } */
   }
 
   /* global footer */
@@ -83,7 +98,7 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
-    
+
     @media (min-width: 1401px) {
       background-position: center bottom;
     }
@@ -236,11 +251,6 @@ body {
 
     .background {
       padding: 1em;
-    }
-
-    canvas {
-      position: absolute;
-      top: 0;
     }
   }
 

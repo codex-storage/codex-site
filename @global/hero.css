@@ -160,10 +160,6 @@
       color: var(--green-10);
       border-bottom: 1px solid transparent;
       transition: border-color 0.5s, color 0.5s;
-
-      &:hover {
-        border-color: var(--green-10);
-      }
     }
 
     div {
