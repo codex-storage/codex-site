@@ -2,6 +2,7 @@ usecases:
   - title: Blockchain Transaction Archives
     category: Transaction Archives
     icon: /icon/usecases/archives.svg
+    tag: archives
     description1: |
       Layer 2 solutions, such as Optimistic and ZK-Rollups, are designed to 
       alleviate congestion on main blockchain networks.  
@@ -17,6 +18,7 @@ usecases:
   - title: Scientific Research Data in Decentralised Science (DeSci)
     category: Scientific Research Data in Decentralised Science (DeSci)
     icon: /icon/usecases/research.svg
+    tag: research
     description1: |
       Scientific research often produces vast amounts of data that must be preserved for decades or centuries. 
       Codex offers a robust solution for this critical use case by enabling storage for DeSci data.
@@ -27,6 +29,7 @@ usecases:
   - title: AI datasets and RAG Embeddings
     category: AI datasets and RAG Embeddings
     icon: /icon/usecases/ai.svg
+    tag: ai
     description1: |
       AI is evolving rapidly, and it is important to have a durable data engine that can store massive datasets for training purposes. 
       The curation of datasets is a long process, and storing them at one source can risk a single point of failure.
@@ -37,6 +40,7 @@ usecases:
   - title: Secure Storage of Legal Records
     category: Secure Storage of Legal Records
     icon: /icon/usecases/legal.svg
+    tag: storage
     description1: |
       Legal precedents, legislative histories, and governmental records form the backbone of our societal structures. 
       Codex’s tamper-resistant storage ensures the integrity of these crucial documents, making any unauthorised alterations immediately detectable.
@@ -47,6 +51,7 @@ usecases:
   - title: Long-Term Medical Records and Genomic Data
     category: Long-Term Medical Records and Genomic Data
     icon: /icon/usecases/medical.svg
+    tag: medical
     description1: |
       As personalised medicine advances, the need for secure, long-term storage of individual medical histories and genomic data becomes increasingly vital. 
       Codex’s advanced encryption and access control mechanisms ensure patients have control over their data, granting and revoking access as needed.
@@ -57,6 +62,7 @@ usecases:
   - title: Whistleblower Document Protection
     category: Whistleblower Document Protection
     icon: /icon/usecases/whistleblower.svg
+    tag: whistleblower
     description1: |
       Whistleblowers often risk their personal safety by exposing wrongdoings. 
       Codex provides a secure platform for storing and distributing sensitive documents that unearth corruption or illegal activities.
@@ -68,6 +74,7 @@ usecases:
   - title: Decentralised Social Media Archives
     category: Decentralised Social Media Archives
     icon: /icon/usecases/media.svg
+    tag: media
     description1: |
       In an era where social media plays a crucial role in shaping public opinion and documenting historical events, there is a growing need 
       for durable, censorship-resistant archives of social media content. 
@@ -80,6 +87,7 @@ usecases:
   - title: Cryptographic Keys and Digital Assets
     category: Cryptographic Keys and Digital Assets
     icon: /icon/usecases/crypto.svg
+    tag: crypto
     description1: |
       As more wealth and identity become tied to digital assets and cryptographic keys, the need for ultra-secure, long-term storage solutions becomes critical. 
       Codex can serve as a highly durable and private backup solution for cryptocurrency wallets, digital identity documents, and other sensitive cryptographic materials.
@@ -90,6 +98,7 @@ usecases:
   - title: DataDAOs
     category: DataDAOs
     icon: /icon/usecases/daos.svg
+    tag: daos
     description1: |
       DataDAOs are virtual and decentralised governance bodies that aim to collect, classify, preserve and monetise the usage of data curated by the members of a specific DAO. 
       For example, HuggingFace Datasets do not incentivise the curators of a particular dataset.

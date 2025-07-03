@@ -1,19 +1,17 @@
 const usecases = document.querySelectorAll(".usecases ul li");
 const items = document.querySelectorAll(".usecases .content");
 
-gsap.registerPlugin(TextPlugin, DrawSVGPlugin);
-gsap.set("#path", { drawSVG: "0%" });
-gsap.to("#path", { drawSVG: "100%", duration: 2, ease: "power1.inOut" });
+gsap.registerPlugin(MorphSVGPlugin);
 
-function animateIcon() {
-  gsap.fromTo(
-    "#path",
-    { drawSVG: "0%" },
-    { drawSVG: "100%", duration: 5, ease: "power1.inOut" }
-  );
+const archives = document.getElementById("archives");
+
+function animateIcon(tag) {
+  gsap.to(archives, {
+    duration: 0.5,
+    morphSVG: "#" + tag,
+    ease: "power2.out",
+  });
 }
-
-animateIcon();
 
 usecases.forEach((usecase) => {
   usecase.addEventListener("click", (e) => {
@@ -33,7 +31,7 @@ usecases.forEach((usecase) => {
 
     const content = document.getElementById(`content-${index}`);
     content.setAttribute("aria-selected", "true");
-    animateIcon();
+    animateIcon(content.dataset.tag);
   });
 });
 
@@ -205,14 +203,11 @@ const addAutoplayProgressListeners = (emblaApi, progressNode) => {
   let animationName = "";
   let timeoutId = 0;
   let rafId = 0;
-  console.info("addAutoplayProgressListeners", progressNode);
 
   const startProgress = (emblaApi) => {
-    console.info("startProgress");
-
     const autoplay = emblaApi?.plugins()?.autoplay;
     if (!autoplay) return;
-    console.info("okk");
+
     const timeUntilNext = autoplay.timeUntilNext();
     if (timeUntilNext === null) return;
 
@@ -245,11 +240,7 @@ const addAutoplayProgressListeners = (emblaApi, progressNode) => {
     .on("autoplay:timerset", startProgress)
     .on("autoplay:timerstopped", stopProgress);
 
-  console.info("registered");
-
   return () => {
-    console.info("unregistered");
-
     emblaApi
       .off("autoplay:timerset", startProgress)
       .off("autoplay:timerstopped", stopProgress);
@@ -283,19 +274,15 @@ createScriptElement(
 
         document.querySelector(".team .embla").onmouseenter = () => {
           emblaApi?.plugins().autoplay.stop();
-          console.info("enter");
         };
 
         document.querySelector(".team .embla").onmouseleave = () => {
           emblaApi?.plugins().autoplay.play();
-          console.info("leave");
         };
 
         emblaApi
           .on("destroy", removePrevNextBtnsClickHandlers)
           .on("destroy", removeProgressListeners);
-
-        console.info("done");
       }
     );
   }
@@ -326,6 +313,24 @@ if (window.innerWidth <= 1000) {
         .on("destroy", removeTweenScale)
         .on("destroy", removePrevNextBtnsClickHandlers)
         .on("destroy", removeDotBtnsAndClickHandlers);
+
+      let lastIndex = 0;
+
+      function logSlidesInView(emblaApi) {
+        const [first, last = first] = emblaApi.slidesInView();
+
+        if (first == lastIndex && last == lastIndex) {
+          return;
+        }
+
+        const index = first == lastIndex ? last : first;
+        const item = document.querySelectorAll(".usecase-icon path")[index];
+
+        animateIcon(item.id);
+        lastIndex = index;
+      }
+
+      emblaApi.on("slidesInView", logSlidesInView);
     }
   );
 }

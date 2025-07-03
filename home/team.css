@@ -152,9 +152,21 @@
       border-radius: var(--border-radius);
       white-space: nowrap;
       user-select: none;
-      min-width: 15%;
-      max-width: 315px;
       transition: 0.5s box-shadow, 0.5s border-color;
+
+      @media (max-width: 500px) {
+        min-width: 8%;
+      }
+
+      @media (min-width: 501px) {
+        min-width: 12%;
+        max-width: 315px;
+      }
+
+      @media (min-width: 801px) {
+        min-width: 15%;
+        max-width: 315px;
+      }
 
       &.default {
         border-color: var(--green-20);
