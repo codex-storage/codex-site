@@ -5,7 +5,6 @@
   position: relative;
 
   .parallax-background {
-    z-index: 1;
     position: absolute;
     background-image: url(/img/disk.webp);
     background-repeat: no-repeat;

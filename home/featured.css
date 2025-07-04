@@ -71,11 +71,6 @@
       }
 
       .resource {
-        border-radius: 8px;
-
-        @media (max-width: 600px) {
-        }
-
         img {
           width: 100%;
           height: auto;

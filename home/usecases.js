@@ -272,12 +272,26 @@ createScriptElement(
           progressNode
         );
 
+        let hasStopped = false;
+
         document.querySelector(".team .embla").onmouseenter = () => {
           emblaApi?.plugins().autoplay.stop();
         };
 
         document.querySelector(".team .embla").onmouseleave = () => {
-          emblaApi?.plugins().autoplay.play();
+          if (!hasStopped) {
+            emblaApi?.plugins().autoplay.play();
+          }
+        };
+
+        document.getElementById("embla-play-team").onclick = () => {
+          hasStopped = !hasStopped;
+          if (hasStopped) {
+            emblaApi?.plugins().autoplay.stop();
+          } else {
+            emblaApi?.plugins().autoplay.play();
+          }
+          document.getElementById("embla-play-team").classList.toggle("stop");
         };
 
         emblaApi

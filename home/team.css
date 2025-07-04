@@ -234,15 +234,15 @@
   .controls {
     display: flex;
     height: 86px;
-    flex-direction: column;
     align-items: center;
     margin-top: 1em;
+    gap: 1em;
+    justify-content: space-between;
 
     .buttons {
       display: flex;
       gap: 0.6rem;
       align-items: center;
-      margin-bottom: 1em;
 
       button {
         background-color: transparent;
@@ -260,16 +260,33 @@
         border-radius: 50%;
 
         &:not(disabled) {
-          --color: black;
+          --color: var(--green-14);
         }
 
         &:disabled {
-          --color: var(--grey-60);
+          --color: var(--green-17);
+          opacity: 0.4;
         }
 
-        svg {
+        &:not(.embla-play) svg {
           width: 35%;
           height: 35%;
+        }
+
+        &.embla-play svg {
+          width: 50%;
+        }
+
+        &.embla-play:not(.stop) {
+          svg:first-child {
+            display: none;
+          }
+        }
+
+        &.embla-play.stop {
+          svg + svg {
+            display: none;
+          }
         }
       }
     }
@@ -282,15 +299,15 @@
       justify-self: flex-end;
       align-self: center;
       width: 13rem;
-      max-width: 90%;
+      max-width: 100px;
       overflow: hidden;
       justify-self: center;
       transition: opacity 0.3s ease-in-out;
       width: 8rem;
-      border: 1px solid var(--grey-60);
+      border: 1px solid var(--green-14);
 
       > div {
-        background-color: rgb(222, 222, 222);
+        background-color: var(--green-17);
         position: absolute;
         width: 100%;
         top: 0;
