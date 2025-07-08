@@ -272,6 +272,28 @@ createScriptElement(
           progressNode
         );
 
+        let c = document.getElementById("contributor-0");
+        c.classList.add("active");
+
+        document
+          .querySelectorAll(".contributor")
+          .forEach((contributor, index) => {
+            contributor.onclick = () => {
+              emblaApi.scrollTo(index);
+              c.classList.remove("active");
+              c = contributor;
+              c.classList.add("active");
+            };
+          });
+
+        emblaApi.on("select", () => {
+          c.classList.remove("active");
+          const activeIndex = emblaApi.selectedScrollSnap();
+          console.log("Active slide changed to:", activeIndex);
+          c = document.getElementById("contributor-" + activeIndex);
+          c.classList.add("active");
+        });
+
         let hasStopped = false;
 
         document.querySelector(".team .embla").onmouseenter = () => {
