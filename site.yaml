@@ -4,8 +4,8 @@ globals: ["@global"]
 libs: ["@library"]
 
 view_transitions: false
-native_css_nesting: true
-inline_css: false
+native_css_nesting: false
+inline_css: true
 sections: true
 
 title_template: "%s | Codex"
