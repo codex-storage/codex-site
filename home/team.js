@@ -1,60 +1,89 @@
-// let index = 0;
-// let currentContributor = document.getElementById("contributor-0");
-// let isMouseHover = false;
-// let footer = document.querySelector(".team footer");
+import { addAutoplayProgressListeners } from "./embla-autoplay.js";
+import { waitScript } from "../@global/helpers.js";
+import { addPrevNextBtnsClickHandlers } from "./embla-buttons.js";
 
-// footer.addEventListener("mouseover", () => {
-//   isMouseHover = true;
-// });
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(async (entry) => {
+    if (entry.isIntersecting) {
+      obs.unobserve(entry.target);
 
-// footer.addEventListener("mouseout", () => {
-//   console.info("Mouse out of footer");
-//   // Reset the index to 0 when mouse leaves the footer
-//   isMouseHover = false;
-// });
+      if (window.EmblaCarousel === undefined) {
+        await waitScript(
+          "https://cdn.jsdelivr.net/npm/embla-carousel@8.6.0/embla-carousel.umd.min.js"
+        );
+      }
 
-// currentContributor.classList.add("default");
+      await waitScript(
+        "https://cdn.jsdelivr.net/npm/embla-carousel-autoplay@8.6.0/embla-carousel-autoplay.umd.min.js"
+      );
 
-// function changeCoreContributor() {
-//   if (isMouseHover) {
-//     return false;
-//   }
+      const emblaNode = document.querySelector(".team .embla");
+      const options = { loop: false, dragFree: true };
+      const prevBtn = document.querySelector("#embla-prev-team");
+      const nextBtn = document.querySelector("#embla-next-team");
+      const progressNode = document.querySelector("#embla-progress");
+      const emblaApi = EmblaCarousel(emblaNode, options, [
+        EmblaCarouselAutoplay({ playOnInit: 1, delay: 3000 }),
+      ]);
+      const removePrevNextBtnsClickHandlers = addPrevNextBtnsClickHandlers(
+        emblaApi,
+        prevBtn,
+        nextBtn
+      );
 
-//   currentContributor.classList.remove("default");
+      const removeProgressListeners = addAutoplayProgressListeners(
+        emblaApi,
+        progressNode
+      );
 
-//   let nextContributor = document.getElementById("contributor-" + (index + 1));
-//   if (!nextContributor) {
-//     nextContributor = document.getElementById("contributor-0");
-//     index = 0;
-//   }
+      let c = document.getElementById("contributor-0");
+      c.classList.add("active");
 
-//   nextContributor.classList.add("default");
+      document
+        .querySelectorAll(".contributor")
+        .forEach((contributor, index) => {
+          contributor.onclick = () => {
+            emblaApi.scrollTo(index);
+            c.classList.remove("active");
+            c = contributor;
+            c.classList.add("active");
+          };
+        });
 
-//   const nextContributorSrc = nextContributor
-//     .querySelector("img")
-//     .getAttribute("src");
+      emblaApi.on("select", () => {
+        c.classList.remove("active");
+        const activeIndex = emblaApi.selectedScrollSnap();
+        c = document.getElementById("contributor-" + activeIndex);
+        c.classList.add("active");
+      });
 
-//   // Get the parent container
-//   const parentContainer = nextContributor.parentElement;
+      let hasStopped = false;
 
-//   // Calculate the horizontal scroll position
-//   const offsetLeft = nextContributor.offsetLeft;
-//   const containerWidth = parentContainer.offsetWidth;
-//   const contributorWidth = nextContributor.offsetWidth;
+      document.querySelector(".team .embla").onmouseenter = () => {
+        emblaApi?.plugins().autoplay.stop();
+      };
 
-//   parentContainer.scrollTo({
-//     left: offsetLeft - containerWidth / 2 + contributorWidth / 2,
-//     behavior: "smooth", // Enable smooth scrolling
-//   });
+      document.querySelector(".team .embla").onmouseleave = () => {
+        if (!hasStopped) {
+          emblaApi?.plugins().autoplay.play();
+        }
+      };
 
-//   const mainContributorImage = document.getElementById(
-//     "main-contributor-image"
-//   );
-//   mainContributorImage.setAttribute("src", nextContributorSrc);
+      document.getElementById("embla-play-team").onclick = () => {
+        hasStopped = !hasStopped;
+        if (hasStopped) {
+          emblaApi?.plugins().autoplay.stop();
+        } else {
+          emblaApi?.plugins().autoplay.play();
+        }
+        document.getElementById("embla-play-team").classList.toggle("stop");
+      };
 
-//   index++;
-//   currentContributor = nextContributor;
-// }
+      emblaApi
+        .on("destroy", removePrevNextBtnsClickHandlers)
+        .on("destroy", removeProgressListeners);
+    }
+  });
+});
 
-// setInterval(changeCoreContributor, 5000);
-
+observer.observe(document.querySelector(".team"));
