@@ -1,6 +1,7 @@
 .team {
   position: relative;
   background-color: white;
+  overflow: hidden;
 
   @media (min-width: 1201px) {
     margin-bottom: 0;

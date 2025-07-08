@@ -2,17 +2,26 @@
   display: flex;
   background-color: var(--dark-30);
   height: 720px;
-  background-image: url(/img/hero.webp);
-  background-blend-mode: lighten;
-  background-repeat: no-repeat;
   position: relative;
   min-height: 95vh;
   z-index: 1;
+  overflow: hidden;
+
+  img[fetchpriority="high"] {
+    position: absolute;
+    top: 0;
+    right: -20%;
+    mix-blend-mode: lighten;
+    height: 100%;
+  }
+
+  > div,
+  > footer {
+    z-index: 1;
+  }
 
   @media (min-width: 1001px) {
-    background-size: 1000px;
     flex-direction: column;
-    background-position: center right -450px;
 
     > div:first-child {
       flex: 1;
@@ -34,9 +43,11 @@
 
   @media (max-width: 1000px) {
     flex-direction: column;
-    background-size: 1000px;
     justify-content: flex-end;
-    background-position: center right -650px;
+
+    img[fetchpriority="high"] {
+      right: -35%;
+    }
 
     > div:first-child {
       display: flex;
@@ -47,8 +58,22 @@
     }
   }
 
+  @media (max-width: 800px) {
+    img[fetchpriority="high"] {
+      right: -55%;
+    }
+  }
+
   @media (max-width: 600px) {
-    background-size: 850px;
+    img[fetchpriority="high"] {
+      right: -80%;
+    }
+  }
+
+  @media (max-width: 430px) {
+    img[fetchpriority="high"] {
+      right: -140%;
+    }
   }
 
   h1 {

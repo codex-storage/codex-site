@@ -2,7 +2,14 @@
   <icon src="icon/header/play.svg"></icon>
 
   <dialog>
-    <video controls poster="{ poster }">
+    <video
+      controls
+      poster="{ poster }"
+      preload="metadata"
+      playsinline
+      width="100%"
+      height="auto"
+    >
       <source src="{ src }" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
