@@ -1,3 +1,7 @@
+import { waitForVariable } from "../@global/helpers.js";
+
+await waitForVariable("Splitting");
+
 Splitting();
 
 const lettersAndSymbols = [

@@ -1,4 +1,21 @@
-import _ from "https://cdn.jsdelivr.net/npm/underscore@1.13.7/+esm";
+import { waitForVariable } from "./helpers.js";
+
+{
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = "https://unpkg.com/splitting/dist/splitting.css";
+  document.head.appendChild(link);
+}
+
+{
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = "https://unpkg.com/splitting/dist/splitting-cells.css";
+  document.head.appendChild(link);
+}
+
+await waitForVariable("Splitting");
+await waitForVariable("_");
 
 (function (w, d) {
   const options = ["ⓒ", "🅾", "Ɗ", "ė", "✖"],

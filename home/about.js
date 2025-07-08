@@ -1,3 +1,7 @@
+import { waitForVariable } from "../@global/helpers.js";
+
+await waitForVariable("VanillaTilt");
+
 VanillaTilt.init(document.querySelector("#about-tilt"), {
   max: 10,
   glare: true,

@@ -1,5 +1,10 @@
+import { waitForVariable } from "../@global/helpers.js";
+
 const usecases = document.querySelectorAll(".usecases ul li");
 const items = document.querySelectorAll(".usecases .content");
+
+await waitForVariable("gsap");
+await waitForVariable("MorphSVGPlugin");
 
 gsap.registerPlugin(MorphSVGPlugin);
 
@@ -289,7 +294,6 @@ createScriptElement(
         emblaApi.on("select", () => {
           c.classList.remove("active");
           const activeIndex = emblaApi.selectedScrollSnap();
-          console.log("Active slide changed to:", activeIndex);
           c = document.getElementById("contributor-" + activeIndex);
           c.classList.add("active");
         });

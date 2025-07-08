@@ -1,6 +1,6 @@
 .ui {
   background-color: var(--dark-0);
-  background-image: url(/img/ui/ui.png);
+  background-image: url(/img/ui/ui.webp);
   background-size: cover;
   position: relative;
   background-repeat: no-repeat;
@@ -159,14 +159,14 @@
       .laptop {
         @media (min-width: 1001px) {
           position: relative;
-          right: -10%;
+          right: 15%;
           top: -10%;
           width: 150%;
         }
 
         @media (max-width: 1000px) {
           position: relative;
-          width: 77%;
+          width: 100%;
           top: 0;
           right: 0;
         }
@@ -185,8 +185,8 @@
           position: absolute;
           z-index: 1;
           width: 13%;
-          bottom: -16%;
-          right: 82%;
+          bottom: -10%;
+          right: 88%;
         }
       }
     }

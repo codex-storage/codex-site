@@ -6,7 +6,7 @@ article1:
     setup of local Codex clusters for development and test...
   url: >-
     https://blog.codex.storage/codex-factory-creating-local-codex-clusters-for-developers/
-  image: https://blog.codex.storage/content/images/2025/07/codex-blog-020725.png
+  image: /img/blog/article1.webp
   date: Jul 3, 2025
 article2:
   title: Codex June Updates
@@ -18,13 +18,12 @@ article2:
 
     Every month, we explore key de...
   url: https://blog.codex.storage/codex-june-updates/
-  image: https://blog.codex.storage/content/images/2025/07/codex-blog-010725.png
+  image: /img/blog/article2.webp
   date: Jul 1, 2025
 article3:
   title: 'Bridging Protocols: Integrating Codex with BitTorrent'
   description: "The world of peer-to-peer file sharing has evolved significantly since the BitTorrent protocol emerged as a revolutionary technology.\_\n\nAlongside the rise of newer decentralised file-sharing and stora..."
   url: >-
     https://blog.codex.storage/bridging-protocols-integrating-codex-with-bittorrent/
-  image: >-
-    https://blog.codex.storage/content/images/2025/06/bittorent-integration-article-image.png
+  image: /img/blog/article3.webp
   date: Jun 23, 2025

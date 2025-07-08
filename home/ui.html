@@ -35,18 +35,43 @@
       </div>
     </div>
     <div>
-      <img
-        src="/img/ui/phone.png"
-        alt="Codex app"
-        loading="lazy"
-        class="phone"
-      />
-      <img
-        src="/img/ui/laptop.png"
-        alt="Codex app"
-        loading="lazy"
-        class="laptop"
-      />
+      <picture>
+        <source
+          srcset="/img/ui/phone.webp"
+          media="(min-width: 801px)"
+          type="image/webp"
+        />
+        <source
+          srcset="/img/ui/phone-mobile.webp"
+          type="image/webp"
+          media="(max-width: 800px)"
+        />
+        <img
+          src="/img/ui/phone-mobile.webp"
+          alt="Codex app"
+          loading="lazy"
+          class="phone"
+        />
+      </picture>
+
+      <picture>
+        <source
+          srcset="/img/ui/laptop.webp"
+          media="(min-width: 801px)"
+          type="image/webp"
+        />
+        <source
+          srcset="/img/ui/laptop-mobile.webp"
+          type="image/webp"
+          media="(max-width: 800px)"
+        />
+        <img
+          src="/img/ui/laptop-mobile.webp"
+          alt="Codex app"
+          loading="lazy"
+          class="laptop"
+        />
+      </picture>
     </div>
   </main>
 </section>
