@@ -32,8 +32,8 @@
     color: var(--green-17);
 
     @media (max-width: 800px) {
-      right: -90px;
-      bottom: -25px;
+      right: 0;
+      bottom: -40%;
       margin: auto;
       opacity: 0.2;
     }
