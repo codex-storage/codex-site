@@ -5,6 +5,7 @@ import {
   addAutoplayProgressListeners,
   addPrevNextBtnsClickHandlers,
   addDotBtnsAndClickHandlers,
+  setupTweenScale,
 } from "../@global/helpers.js";
 
 function videoPlayer() {
