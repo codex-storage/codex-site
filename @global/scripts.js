@@ -1,4 +1,6 @@
-import { waitScript, waitStyle } from "./helpers.js";
+import { waitScript, waitStyle, waitForPageLoaded } from "./helpers.js";
+
+await waitForPageLoaded();
 
 await Promise.all([
   waitStyle("https://cdn.jsdelivr.net/npm/splitting@1.1.0/dist/splitting.css"),
