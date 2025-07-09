@@ -41,6 +41,13 @@ export function waitForPageLoaded() {
   });
 }
 
+export function loadGoogleFont(href) {
+  const link = document.createElement("link");
+  link.rel = "stylesheet";
+  link.href = href;
+  document.head.appendChild(link);
+}
+
 export const addAutoplayProgressListeners = (emblaApi, progressNode) => {
   const progressBarNode = document.querySelector(".embla-progress-bar");
 
