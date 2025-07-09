@@ -25,12 +25,8 @@
       }
 
       .image {
-        background-image: url(/img/testnet.webp);
         width: 155px;
-        height: 76px;
-        background-size: 300%;
-        background-position: center;
-        background-repeat: no-repeat;
+        height: 67px;
       }
 
       .image + .icon {

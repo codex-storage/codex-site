@@ -1,15 +1,19 @@
 .featured {
   background-color: var(--grey-27);
-  background-image: url(/img/featured/featured.svg);
-  background-position: 0 -4em;
-  background-repeat: no-repeat;
 
   @media (min-width: 801px) {
-    background-size: 175%;
   }
 
   @media (max-width: 800px) {
-    background-size: 400%;
+  }
+
+  .featured-background {
+    position: absolute;
+    width: 200%;
+    object-fit: cover;
+    height: 300px;
+    top: 0;
+    z-index: 0;
   }
 
   main {
