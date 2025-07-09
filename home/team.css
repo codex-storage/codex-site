@@ -8,7 +8,7 @@
   }
 
   @media (max-width: 1200px) {
-    margin-bottom: 20em;
+    padding-bottom: 16em !important;
   }
 
   img {
@@ -105,7 +105,7 @@
 
         @media (max-width: 1200px) {
           position: absolute;
-          bottom: -225px;
+          bottom: 2em;
           left: 0;
           right: 0;
           width: calc(100% - 4em);

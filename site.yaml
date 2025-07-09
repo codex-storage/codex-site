@@ -18,7 +18,7 @@ port: 8085
 # OG image
 origin: https://codex.storage
 #og: /img/og.jpg
-
+prefetch: [/img/hero.webp, /img/codex.mp4]
 hero:
   video: /img/codex.mp4
   poster: /img/poster.jpg

@@ -3,25 +3,23 @@
   --subheader-color: var(--grey-90);
   background-color: var(--dark-20);
   position: relative;
+  overflow: hidden;
+  z-index: 0;
 
   .parallax-background {
-    position: absolute;
-    background-image: url(/img/disk.webp);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 100%;
+    position: fixed;
     top: 0;
+    z-index: 0;
+    left: 20%;
+    transform-style: preserve-3d;
+    will-change: transform;
+    pointer-events: none;
+    display: none;
 
     @media (max-width: 800px) {
       width: 100%;
-      background-size: contain;
+      height: auto;
       left: 0;
-    }
-
-    @media (min-width: 801px) {
-      left: 17%;
-      width: 500px;
-      background-position: 24%;
     }
   }
 

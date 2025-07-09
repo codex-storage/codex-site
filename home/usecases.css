@@ -249,7 +249,7 @@
     --slide-size: 100%;
     margin-left: -1em;
     margin-right: -1em;
-    padding: 1em;
+    padding: 0 1em;
 
     @media (max-width: 1000px) {
     }
