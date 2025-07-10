@@ -102,7 +102,7 @@
         font-weight: 400;
         font-size: 0.85em;
         text-transform: uppercase;
-        color: var(--green-14);
+        color: var(--green-17);
         transition: background-color 0.3s ease-in-out;
         cursor: pointer;
         position: relative;
@@ -150,7 +150,6 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      backdrop-filter: blur(2px);
       background-size: cover;
 
       @media (min-width: 1000px) {

@@ -2,6 +2,7 @@
   position: relative;
   background-color: white;
   overflow: hidden;
+  padding: 0 !important;
 
   @media (min-width: 1201px) {
     margin-bottom: 0;
@@ -9,6 +10,14 @@
 
   @media (max-width: 1200px) {
     padding-bottom: 16em !important;
+  }
+
+  > div {
+    margin: auto;
+    margin: auto;
+    max-width: var(--max-width);
+    padding: var(--padding-section);
+    width: 100%;
   }
 
   img {
@@ -19,10 +28,11 @@
 
   .team-background {
     position: absolute;
-    width: 200%;
+    width: 190%;
     object-fit: cover;
     top: 10%;
     z-index: 0;
+    height: 395px;
 
     @media (max-width: 800px) {
       height: 300px;
@@ -166,12 +176,13 @@
       user-select: none;
       transition: 0.5s box-shadow, 0.5s border-color;
       cursor: pointer;
+      min-width: 25%;
 
       @media (max-width: 500px) {
-        min-width: 8%;
+        min-width: 75%;
       }
 
-      @media (min-width: 501px) {
+      /* @media (min-width: 501px) {
         min-width: 12%;
         max-width: 315px;
       }
@@ -179,11 +190,12 @@
       @media (min-width: 801px) {
         min-width: 15%;
         max-width: 315px;
-      }
+      } */
 
       &.active {
-        border-color: var(--green-20);
-        box-shadow: 0 4px 10px rgba(0, 128, 0, 0.3);
+        border-color: black;
+        /* box-shadow: 0 4px 10px rgba(0, 128, 0, 0.3); */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
       }
 
       a,
@@ -224,14 +236,18 @@
 
   .embla {
     overflow: hidden;
-    --slide-height: 19rem;
     --slide-spacing: 1rem;
-    --slide-size: 50%;
+    padding: 1em 0;
 
     > div:first-child {
       display: flex;
       gap: 1em;
       height: 100%;
+      width: 100%;
+
+      .contributor:first-child {
+        margin-left: 1em;
+      }
 
       @media (min-width: 1001px) {
         height: 100%;
@@ -273,11 +289,11 @@
         border-radius: 50%;
 
         &:not(disabled) {
-          --color: var(--green-14);
+          --color: black;
         }
 
         &:disabled {
-          --color: var(--green-17);
+          --color: black;
           opacity: 0.4;
         }
 

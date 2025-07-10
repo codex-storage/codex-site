@@ -5,23 +5,6 @@
   box-sizing: border-box;
 }
 
-/* width */
-::-webkit-scrollbar {
-  width: 10px;
-  background: var(--dark-30);
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: var(--green-10);
-  border-radius: 10px;
-}
-
 /* consistent whitespace */
 ul,
 ol,
@@ -87,7 +70,7 @@ body {
       transform: translate3d(0, 0, 0);
     }
 
-    svg {
+    .logo {
       color: white;
     }
 
@@ -103,7 +86,7 @@ body {
     background-size: auto 325px;
     background-color: var(--dark-10);
     /* padding: var(--padding-section); */
-    position: fixed;
+    /* position: fixed; */
     bottom: 0;
     width: 100%;
 
@@ -270,6 +253,7 @@ body {
     margin-right: auto;
     z-index: 1;
     position: relative;
+    overflow: hidden;
 
     /* @media (min-width: 1001px) { */
     min-height: 95vh;

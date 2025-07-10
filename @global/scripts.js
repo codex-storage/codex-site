@@ -167,11 +167,6 @@ async function addRandomText() {
     ];
     // effects and respective methods
     effects = {
-      fx1: () => this.fx1(),
-      fx2: () => this.fx2(),
-      fx3: () => this.fx3(),
-      fx4: () => this.fx4(),
-      fx5: () => this.fx5(),
       fx6: () => this.fx6(),
     };
     totalChars = 0;
@@ -236,6 +231,12 @@ async function addRandomText() {
       ];
     }
     fx6() {
+      console.info("fx6");
+      for (const line of this.lines) {
+        for (const cell of line.cells) {
+          cell.cache = { state: cell.state, color: cell.color };
+        }
+      }
       // max iterations for each cell to change the current value
       const MAX_CELL_ITERATIONS = 10;
       let finished = 0;
@@ -251,7 +252,14 @@ async function addRandomText() {
           ++finished;
           if (finished === this.totalChars) {
             this.isAnimating = false;
+            console.info("finished");
           }
+
+          // const lines = this.lines;
+          // setTimeout(function () {
+          //   console.info("TypeShuffle fx6 finished");
+          //   cell.set(cell.original);
+          // }, 500);
         } else {
           cell.set(this.getRandomChar());
 
@@ -263,19 +271,15 @@ async function addRandomText() {
 
         ++iteration;
         if (iteration < MAX_CELL_ITERATIONS) {
-          setTimeout(() => loop(line, cell, iteration), randomNumber(30, 110));
+          setTimeout(() => loop(line, cell, iteration), 75);
         }
       };
 
       for (const line of this.lines) {
         for (const cell of line.cells) {
-          setTimeout(() => loop(line, cell), (line.position + 1) * 80);
+          setTimeout(() => loop(line, cell), (line.position + 1) * 10);
         }
       }
-
-      // setTimeout(function () {
-      //   ts.reset();
-      // }, 1500);
     }
 
     reset() {
@@ -299,8 +303,6 @@ async function addRandomText() {
     }
   }
 
-  let ts;
-
   const observer = new IntersectionObserver(
     (entries, obs) => {
       entries.forEach((entry) => {
@@ -308,7 +310,7 @@ async function addRandomText() {
           // Only run once per element
           // obs.unobserve(entry.target);
           // Run the effect
-          ts = new TypeShuffle(entry.target);
+          const ts = new TypeShuffle(entry.target);
           ts.trigger("fx6");
         }
       });
@@ -318,23 +320,30 @@ async function addRandomText() {
     }
   );
 
-  document
-    .querySelectorAll("section header p")
-    .forEach((p) => observer.observe(p));
+  if (window.innerWidth > 800) {
+    document
+      .querySelectorAll("section header p")
+      .forEach((p) => observer.observe(p));
 
-  document
-    .querySelectorAll("section header span")
-    .forEach((p) => observer.observe(p));
+    document
+      .querySelectorAll("section header span")
+      .forEach((p) => observer.observe(p));
+  }
 
-  document.querySelector(".discover").onmouseenter = (e) => {
-    ts = new TypeShuffle(e.target);
-    ts.trigger("fx6");
-  };
+  const discoverTs = new TypeShuffle(document.querySelector(".discover"));
+  document.querySelector(".discover").onmouseenter = (e) =>
+    discoverTs.trigger("fx6");
 
-  document.querySelectorAll("#menu nav a").forEach((item) => {
-    ts = new TypeShuffle(item);
-    ts.trigger("fx6");
-  });
+  if (window.innerWidth > 800) {
+    document.querySelectorAll("#menu nav a").forEach((item) => {
+      const ts = new TypeShuffle(item);
+      ts.trigger("fx6");
+
+      item.onmouseenter = (e) => {
+        ts.trigger("fx6");
+      };
+    });
+  }
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 function stickyMenu() {
@@ -440,11 +449,12 @@ function footer() {
             };
 
             const redraw = () => {
+              const div = window.innerWidth < 800 ? 10 : 15;
               let wh = d.clientHeight,
                 ww = window.outerWidth,
                 /*These arrays are to workaround CodePen's infinite loop "feature", large for-loops seem to trigger the error even if the loop isn't actually infinite :/ - Creating arrays padded with zeroes and using forEach seems to work (for now!!).*/
-                cols = new Array((ww / 15) | 0).join("0").split(""),
-                rows = new Array((wh / 15) | 0).join("0").split(""),
+                cols = new Array((ww / div) | 0).join("0").split(""),
+                rows = new Array((wh / div) | 0).join("0").split(""),
                 rh = [],
                 top = 5;
               d.innerHTML = "";

@@ -366,148 +366,168 @@ function about() {
 }
 //////////////////////////////////////////////////////////////////////////////////////
 async function blog() {
-  if (!window.Splitting) {
-    await Promise.all([
-      waitStyle(
-        "https://cdn.jsdelivr.net/npm/splitting@1.1.0/dist/splitting.css"
-      ),
-      waitStyle(
-        "https://cdn.jsdelivr.net/npm/splitting@1.1.0/dist/splitting-cells.css"
-      ),
-      waitScript(
-        "https://cdn.jsdelivr.net/npm/splitting@1.1.0/dist/splitting.min.js"
-      ),
-    ]);
-  }
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach(async (entry) => {
+        if (entry.isIntersecting) {
+          obs.unobserve(entry.target);
 
-  if (!window.gsap) {
-    const isModule = true;
-    await waitScript("/img/js/gsap.js", isModule);
-  }
+          const footer = document.querySelector("body > footer");
+          document.querySelector(".blog").style.marginBottom =
+            footer.clientHeight + "px";
 
-  Splitting();
+          footer.style.position = "fixed";
 
-  const lettersAndSymbols = [
-    "a",
-    "b",
-    "c",
-    "d",
-    "e",
-    "f",
-    "g",
-    "h",
-    "i",
-    "j",
-    "k",
-    "l",
-    "m",
-    "n",
-    "o",
-    "p",
-    "q",
-    "r",
-    "s",
-    "t",
-    "u",
-    "v",
-    "w",
-    "x",
-    "y",
-    "z",
-    "!",
-    "@",
-    "#",
-    "$",
-    "%",
-    "^",
-    "&",
-    "*",
-    "-",
-    "_",
-    "+",
-    "=",
-    ";",
-    ":",
-    "<",
-    ">",
-    ",",
-  ];
+          if (!window.Splitting) {
+            await Promise.all([
+              waitStyle(
+                "https://cdn.jsdelivr.net/npm/splitting@1.1.0/dist/splitting.css"
+              ),
+              waitStyle(
+                "https://cdn.jsdelivr.net/npm/splitting@1.1.0/dist/splitting-cells.css"
+              ),
+              waitScript(
+                "https://cdn.jsdelivr.net/npm/splitting@1.1.0/dist/splitting.min.js"
+              ),
+            ]);
+          }
 
-  const articles = document.querySelectorAll(".blog article");
+          if (!window.gsap) {
+            const isModule = true;
+            await waitScript("/img/js/gsap.js", isModule);
+          }
 
-  function shuffleLetters(char) {
-    gsap.killTweensOf(char);
-    gsap.fromTo(
-      char,
-      {
-        //   opacity: 0,
-      },
-      {
-        duration: 0.03,
-        innerHTML: () =>
-          lettersAndSymbols[
-            Math.floor(Math.random() * lettersAndSymbols.length)
-          ],
-        repeat: 3,
-        repeatRefresh: true,
-        opacity: 1,
-        repeatDelay: 0.05,
-        onComplete: () => {
-          gsap.set(char, { innerHTML: char.dataset.initial, delay: 0.03 });
-        },
-      }
-    );
-    setTimeout(() => {
-      gsap.set(char, { innerHTML: char.dataset.initial, delay: 0.03 });
-    }, 250);
-  }
+          Splitting();
 
-  function saveInitialState(char) {
-    char.dataset.initial = char.innerHTML;
-  }
+          const lettersAndSymbols = [
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "f",
+            "g",
+            "h",
+            "i",
+            "j",
+            "k",
+            "l",
+            "m",
+            "n",
+            "o",
+            "p",
+            "q",
+            "r",
+            "s",
+            "t",
+            "u",
+            "v",
+            "w",
+            "x",
+            "y",
+            "z",
+            "!",
+            "@",
+            "#",
+            "$",
+            "%",
+            "^",
+            "&",
+            "*",
+            "-",
+            "_",
+            "+",
+            "=",
+            ";",
+            ":",
+            "<",
+            ">",
+            ",",
+          ];
 
-  articles.forEach((article) => {
-    const date = article.querySelectorAll(`small[data-splitting] .char`);
-    let title = article.querySelectorAll(`h5[data-splitting] .char`);
-    if (title.length === 0) {
-      title = article.querySelectorAll(`h4[data-splitting] .char`);
+          const articles = document.querySelectorAll(".blog article");
+
+          function shuffleLetters(char) {
+            gsap.killTweensOf(char);
+            gsap.fromTo(
+              char,
+              {
+                //   opacity: 0,
+              },
+              {
+                duration: 0.03,
+                innerHTML: () =>
+                  lettersAndSymbols[
+                    Math.floor(Math.random() * lettersAndSymbols.length)
+                  ],
+                repeat: 3,
+                repeatRefresh: true,
+                opacity: 1,
+                repeatDelay: 0.05,
+                onComplete: () => {
+                  gsap.set(char, {
+                    innerHTML: char.dataset.initial,
+                    delay: 0.03,
+                  });
+                },
+              }
+            );
+            setTimeout(() => {
+              gsap.set(char, { innerHTML: char.dataset.initial, delay: 0.03 });
+            }, 250);
+          }
+
+          function saveInitialState(char) {
+            char.dataset.initial = char.innerHTML;
+          }
+
+          articles.forEach((article) => {
+            const date = article.querySelectorAll(
+              `small[data-splitting] .char`
+            );
+            let title = article.querySelectorAll(`h5[data-splitting] .char`);
+            if (title.length === 0) {
+              title = article.querySelectorAll(`h4[data-splitting] .char`);
+            }
+            const text = article.querySelectorAll(`p[data-splitting] .char`);
+
+            date.forEach(saveInitialState);
+            title.forEach(saveInitialState);
+            text.forEach(saveInitialState);
+
+            article.addEventListener("mouseenter", (e) => {
+              date.forEach(shuffleLetters);
+              title.forEach(shuffleLetters);
+              text.forEach(shuffleLetters);
+            });
+          });
+
+          articles.forEach((article) => {
+            article.addEventListener("mouseleave", (e) => {
+              const date = article.querySelectorAll(
+                `small[data-splitting] .char`
+              );
+              let title = article.querySelectorAll(`h5[data-splitting] .char`);
+              if (title.length === 0) {
+                title = article.querySelectorAll(`h4[data-splitting] .char`);
+              }
+              const text = article.querySelectorAll(`p[data-splitting] .char`);
+
+              date.forEach(shuffleLetters);
+              title.forEach(shuffleLetters);
+              text.forEach(shuffleLetters);
+            });
+          });
+        }
+      });
+    },
+    {
+      threshold: 0.5,
     }
-    const text = article.querySelectorAll(`p[data-splitting] .char`);
+  );
 
-    date.forEach((char) => (char.dataset.initial = char.innerHTML));
-    title.forEach((char) => (char.dataset.initial = char.innerHTML));
-    text.forEach((char) => (char.dataset.initial = char.innerHTML));
-  });
-
-  articles.forEach((article) => {
-    article.addEventListener("mouseenter", (e) => {
-      const date = article.querySelectorAll(`small[data-splitting] .char`);
-      let title = article.querySelectorAll(`h5[data-splitting] .char`);
-      if (title.length === 0) {
-        title = article.querySelectorAll(`h4[data-splitting] .char`);
-      }
-      const text = article.querySelectorAll(`p[data-splitting] .char`);
-
-      date.forEach(shuffleLetters);
-      title.forEach(shuffleLetters);
-      text.forEach(shuffleLetters);
-    });
-  });
-
-  articles.forEach((article) => {
-    article.addEventListener("mouseleave", (e) => {
-      const date = article.querySelectorAll(`small[data-splitting] .char`);
-      let title = article.querySelectorAll(`h5[data-splitting] .char`);
-      if (title.length === 0) {
-        title = article.querySelectorAll(`h4[data-splitting] .char`);
-      }
-      const text = article.querySelectorAll(`p[data-splitting] .char`);
-
-      date.forEach(shuffleLetters);
-      title.forEach(shuffleLetters);
-      text.forEach(shuffleLetters);
-    });
-  });
+  observer.observe(document.querySelector(".blog"));
+  console.info("Blog observer initialized");
 }
 //////////////////////////////////////////////////////////////////////////////////////
 function contribution() {
@@ -532,6 +552,7 @@ function contribution() {
     perspective(500px)
     rotateX(${rotateX.toFixed(2)}deg)
     rotateY(${rotateY.toFixed(2)}deg)
+    translateX(${(offsetX / 4).toFixed(2)}px)
     scale3d(1, 1, 1)
   `;
         };
@@ -614,7 +635,12 @@ function team() {
         );
 
         const emblaNode = document.querySelector(".team .embla");
-        const options = { loop: false, dragFree: true };
+        const options = {
+          loop: true,
+          dragFree: true,
+          align: "center",
+          startIndex: 0,
+        };
         const prevBtn = document.querySelector("#embla-prev-team");
         const nextBtn = document.querySelector("#embla-next-team");
         const progressNode = document.querySelector("#embla-progress");
@@ -639,17 +665,26 @@ function team() {
           .querySelectorAll(".contributor")
           .forEach((contributor, index) => {
             contributor.onclick = () => {
+              const i = window.innerWidth > 800 ? index + 2 : index + 5;
               emblaApi.scrollTo(index);
               c.classList.remove("active");
               c = contributor;
               c.classList.add("active");
+              currentSelectedIndex = index;
             };
           });
 
+        let currentSelectedIndex = 0;
         emblaApi.on("select", () => {
+          console.info("Active contributor:", currentSelectedIndex);
+
           c.classList.remove("active");
-          const activeIndex = emblaApi.selectedScrollSnap();
-          c = document.getElementById("contributor-" + activeIndex);
+          if (currentSelectedIndex == 14) {
+            currentSelectedIndex = 0;
+          } else {
+            currentSelectedIndex++;
+          }
+          c = document.getElementById("contributor-" + currentSelectedIndex);
           c.classList.add("active");
         });
 

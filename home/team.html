@@ -1,83 +1,85 @@
-<section @name="team" class="team">
-  <img
-    src="/img/core.svg"
-    alt="Team section background"
-    class="team-background"
-    loading="lazy"
-  />
-  <header>
-    <p>CORE CONTRIBUTORS [+]</p>
-    <span>06</span>
-  </header>
-  <main>
-    <div>
-      <div class="profile">
-        <div>
-          <p>{ team.default.name }</p>
-          <a href="{ team.default.github  }"
+<section @name="team" class="team fluid">
+  <div>
+    <img
+      src="/img/core.svg"
+      alt="Team section background"
+      class="team-background"
+      loading="lazy"
+    />
+    <header>
+      <p>CORE CONTRIBUTORS [+]</p>
+      <span>06</span>
+    </header>
+    <main>
+      <div>
+        <div class="profile">
+          <div>
+            <p>{ team.default.name }</p>
+            <a href="{ team.default.github  }"
+              >Github profile
+              <icon src="icon/contribution/arrow-right.svg"></icon
+            ></a>
+          </div>
+          <span>{ team.default.id }</span>
+        </div>
+        <img
+          src="{ team.default.image  }"
+          alt="Dmitry"
+          id="main-contributor-image"
+          width="570"
+          height="508"
+          loading="lazy"
+        />
+        <div class="careers">
+          <icon src="icon/team/careers.svg"></icon>
+          <span>Careers</span>
+          <p>
+            We are always looking for passionate and talented individuals to
+            join our team.
+          </p>
+          <a>View openings</a>
+        </div>
+      </div>
+    </main>
+    <footer class="embla">
+      <div>
+        <div
+          class="contributor"
+          :for="member,i in team.members"
+          id="contributor-{ i }"
+        >
+          <img
+            src="{ member.image }"
+            alt="{ member.name }"
+            width="104.5"
+            height="100"
+            draggable="false"
+            loading="lazy"
+          />
+          <div class="profile">
+            <p>{ member.name }</p>
+            <span>{ member.id }</span>
+          </div>
+          <a href="{ member.github }" target="_blank"
             >Github profile <icon src="icon/contribution/arrow-right.svg"></icon
           ></a>
         </div>
-        <span>{ team.default.id }</span>
       </div>
-      <img
-        src="{ team.default.image  }"
-        alt="Dmitry"
-        id="main-contributor-image"
-        width="570"
-        height="508"
-        loading="lazy"
-      />
-      <div class="careers">
-        <icon src="icon/team/careers.svg"></icon>
-        <span>Careers</span>
-        <p>
-          We are always looking for passionate and talented individuals to join
-          our team.
-        </p>
-        <a>View openings</a>
+    </footer>
+    <div class="controls">
+      <div id="embla-progress" class="embla-progress" aria-hidden="true">
+        <div class="embla-progress-bar"></div>
       </div>
-    </div>
-  </main>
-  <footer class="embla">
-    <div>
-      <div
-        class="contributor"
-        :for="member,i in team.members"
-        id="contributor-{ i }"
-      >
-        <img
-          src="{ member.image }"
-          alt="{ member.name }"
-          width="104.5"
-          height="100"
-          draggable="false"
-          loading="lazy"
-        />
-        <div class="profile">
-          <p>{ member.name }</p>
-          <span>{ member.id }</span>
-        </div>
-        <a href="{ member.github }" target="_blank"
-          >Github profile <icon src="icon/contribution/arrow-right.svg"></icon
-        ></a>
+      <div class="buttons">
+        <button id="embla-prev-team" type="button" disabled="">
+          <icon src="icon/usecases/embla-arrow-left.svg"></icon></button
+        ><button id="embla-next-team" type="button" disabled="">
+          <icon src="icon/usecases/embla-arrow-right.svg"></icon>
+        </button>
+        <button id="embla-play-team" type="button" class="embla-play">
+          <icon src="icon/usecases/play.svg"></icon>
+          <icon src="icon/usecases/stop.svg"></icon>
+        </button>
       </div>
-    </div>
-  </footer>
-  <div class="controls">
-    <div id="embla-progress" class="embla-progress" aria-hidden="true">
-      <div class="embla-progress-bar"></div>
-    </div>
-    <div class="buttons">
-      <button id="embla-prev-team" type="button" disabled="">
-        <icon src="icon/usecases/embla-arrow-left.svg"></icon></button
-      ><button id="embla-next-team" type="button" disabled="">
-        <icon src="icon/usecases/embla-arrow-right.svg"></icon>
-      </button>
-      <button id="embla-play-team" type="button" class="embla-play">
-        <icon src="icon/usecases/play.svg"></icon>
-        <icon src="icon/usecases/stop.svg"></icon>
-      </button>
-    </div>
   </div>
 </section>

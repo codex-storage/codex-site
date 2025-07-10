@@ -186,6 +186,10 @@
           font-weight: 600;
         }
 
+        .word {
+          cursor: pointer;
+        }
+
         span {
           @media (min-width: 801px) {
             display: none;
@@ -305,6 +309,7 @@
         z-index: -1;
         right: 20px;
         position: relative;
+        color: var(--grey-40);
       }
 
       &:hover {
