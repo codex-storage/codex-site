@@ -18,6 +18,19 @@
     max-width: var(--max-width);
     padding: var(--padding-section);
     width: 100%;
+
+    header {
+      font-optical-sizing: auto;
+      font-family: Azeret Mono, monospace;
+      font-size: 0.85em;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.2em;
+
+      p {
+        margin: 0;
+      }
+    }
   }
 
   img {

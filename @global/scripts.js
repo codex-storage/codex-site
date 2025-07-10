@@ -303,32 +303,33 @@ async function addRandomText() {
     }
   }
 
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Only run once per element
-          // obs.unobserve(entry.target);
-          // Run the effect
-          const ts = new TypeShuffle(entry.target);
-          ts.trigger("fx6");
-        }
-      });
-    },
-    {
-      threshold: 0.5, // Adjust as needed (0.5 = 50% visible)
-    }
-  );
-
-  if (window.innerWidth > 800) {
-    document
-      .querySelectorAll("section header p")
-      .forEach((p) => observer.observe(p));
-
-    document
-      .querySelectorAll("section header span")
-      .forEach((p) => observer.observe(p));
+  function createObserver(ts) {
+    return new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Only run once per element
+            ts.trigger("fx6");
+          }
+        });
+      },
+      {
+        threshold: 0.5, // Adjust as needed (0.5 = 50% visible)
+      }
+    );
   }
+
+  document.querySelectorAll("section header > p").forEach((p) => {
+    const ts = new TypeShuffle(p);
+    const observer = createObserver(ts);
+    observer.observe(p);
+  });
+
+  document.querySelectorAll("section header > span").forEach((p) => {
+    const ts = new TypeShuffle(p);
+    const observer = createObserver(ts);
+    observer.observe(p);
+  });
 
   const discoverTs = new TypeShuffle(document.querySelector(".discover"));
   document.querySelector(".discover").onmouseenter = (e) =>
