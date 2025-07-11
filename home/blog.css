@@ -28,6 +28,7 @@
 
   > main {
     position: relative;
+    display: block !important;
 
     &:after {
       content: "";

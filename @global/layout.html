@@ -1,32 +1,3 @@
 <header>
   <menu></menu>
 </header>
-
-<hero></hero>
-
-<footer>
-  <div>
-    <div>
-      <span>Codex</span>
-      <div>
-        <navi :items="navigation.footer" />
-
-        <nav>
-          <a :for="item in navigation.social" href="{ item.href }">
-            { item.label }
-          </a>
-        </nav>
-      </div>
-      <newsletter></newsletter>
-    </div>
-
-    <div>
-      <h5>Defend Against Data Censorship.</h5>
-      <p>Website last updated: Feb 18, 2025</p>
-    </div>
-
-    <navigation-end :items="navigation.end"></navigation-end>
-  </div>
-
-  <background></background>
-</footer>

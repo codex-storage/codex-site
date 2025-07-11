@@ -372,11 +372,11 @@ async function blog() {
         if (entry.isIntersecting) {
           obs.unobserve(entry.target);
 
-          const footer = document.querySelector("body > footer");
-          document.querySelector(".blog").style.marginBottom =
-            footer.clientHeight + "px";
+          // const footer = document.querySelector("body > footer");
+          // document.querySelector(".blog").style.marginBottom =
+          //   footer.clientHeight + "px";
 
-          footer.style.position = "fixed";
+          // footer.style.position = "fixed";
 
           if (!window.Splitting) {
             await Promise.all([

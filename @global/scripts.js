@@ -492,11 +492,50 @@ function footer() {
     }
   );
 
-  observer.observe(document.querySelector(".blog"));
+  // observer.observe(document.querySelector(".blog"));
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+async function addSmoothScroll() {
+  document.querySelector("body > main").setAttribute("id", "smooth-wrapper");
+  document
+    .querySelector("body > main > article")
+    .setAttribute("id", "smooth-content");
+
+  if (!window.gsap) {
+    await waitScript(
+      "https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"
+    );
+  }
+
+  await waitScript(
+    "https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"
+  );
+
+  await waitScript(
+    "https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"
+  );
+
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+  ScrollSmoother.create({
+    smooth: 1,
+    effects: true,
+    smoothTouch: 0.3,
+    // smoothTouch: 0.1,
+    // normalizeScroll: true,
+  });
+
+  // ScrollTrigger.create({
+  //   trigger: "#footer",
+  //   pin: true,
+  //   start: "bottom bottom",
+  //   end: "+=100%",
+  // });
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 waitForPageLoaded().then(() => {
   addRandomText();
   stickyMenu();
   footer();
+  addSmoothScroll();
 });
