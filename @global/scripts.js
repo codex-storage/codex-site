@@ -517,20 +517,20 @@ async function addSmoothScroll() {
 
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-  ScrollSmoother.create({
+  let smoother = ScrollSmoother.create({
     smooth: 1,
-    effects: true,
     smoothTouch: 0.3,
+    effects: true,
     // smoothTouch: 0.1,
     // normalizeScroll: true,
   });
 
-  // ScrollTrigger.create({
-  //   trigger: "#footer",
-  //   pin: true,
-  //   start: "bottom bottom",
-  //   end: "+=100%",
-  // });
+  ScrollTrigger.create({
+    trigger: "#footer",
+    pin: true,
+    start: "bottom bottom", // when top of #footer hits bottom of viewport
+    end: "+=15%", // pin duration 100% of viewport height
+  });
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 waitForPageLoaded().then(() => {
