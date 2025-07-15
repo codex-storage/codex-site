@@ -551,17 +551,16 @@ function contribution() {
   `;
         };
         if (entry.isIntersecting) {
-          img.style.display = "block";
-
+          img.style.opacity = "1";
           window.addEventListener("mousemove", listener);
         } else {
-          img.style.display = "none";
+          img.style.opacity = "0";
           window.removeEventListener("mousemove", listener);
         }
       });
     },
     {
-      threshold: 0.1, // Adjust as needed (0.5 = 50% visible)
+      threshold: 0.6, // Adjust as needed (0.5 = 50% visible)
     }
   );
 
