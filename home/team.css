@@ -345,10 +345,10 @@
       justify-self: center;
       transition: opacity 0.3s ease-in-out;
       width: 8rem;
-      border: 1px solid var(--green-14);
+      border: 1px solid black;
 
       > div {
-        background-color: var(--green-17);
+        background-color: black;
         position: absolute;
         width: 100%;
         top: 0;
