@@ -1,6 +1,4 @@
 .blog {
-  background-color: white;
-
   header {
     margin-bottom: 2em;
   }
@@ -80,7 +78,7 @@
           flex-direction: column;
         }
 
-        &:not([role="complementary"]) {
+        &:not(.complementary) {
           flex-direction: column;
 
           @media (min-width: 1201px) {
@@ -119,7 +117,7 @@
           }
         }
 
-        &[role="complementary"] {
+        &.complementary {
           display: flex;
           flex: 1 0;
 

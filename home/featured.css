@@ -1,5 +1,5 @@
 .featured {
-  background-color: var(--grey-27);
+  /* background-color: var(--grey-27); */
 
   @media (min-width: 801px) {
   }

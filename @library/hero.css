@@ -1,11 +1,11 @@
 .hero {
   display: flex;
-  background-color: var(--dark-30);
   height: 720px;
   position: relative;
   min-height: 95vh;
   z-index: 1;
-  overflow: hidden;
+  overflow-x: hidden;
+  transition: background-color 0.6s ease, opacity 0.3s ease;
 
   img[fetchpriority="high"] {
     position: absolute;

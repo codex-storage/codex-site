@@ -1,7 +1,6 @@
 .contribution {
   color: var(--light-10);
   --subheader-color: var(--grey-90);
-  background-color: var(--dark-20);
   position: relative;
   overflow: hidden;
   z-index: 0;

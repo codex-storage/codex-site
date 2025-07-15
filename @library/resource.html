@@ -1,13 +1,14 @@
 <div @name="resource" class="resource">
   <h4>{ title }</h4>
-  <a class="resource-img">
+  <a href="{ link }" class="resource-img" aria-label="{title}">
+    <span class="hidden">{ title }</span>
     <div class="grid__item-img-deco"></div>
     <img src="{ image }" alt="{ title }" loading="lazy"/>
-    <img src="/img/gradient.webp" alt="{ title }" loading="lazy" />
+    <img src="/img/gradient.webp" loading="lazy" aria-hidden="true"/>
   </a>
 
   <p>{ description }</p>
-  <a href="{ link }">Learn more 
+  <a href="{ link }" aria-label="{ title }">Learn more 
     <icon src="icon/featured/arrow-right.svg" >
   </a>
 </div>

@@ -1,10 +1,9 @@
 .about {
-  background-color: var(--green-12);
-  background-image: url(/img/about.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-blend-mode: darken;
+  transition: background-color 0.6s ease, opacity 0.3s ease;
 
   main {
     gap: 1em;

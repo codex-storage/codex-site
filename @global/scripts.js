@@ -231,7 +231,6 @@ async function addRandomText() {
       ];
     }
     fx6() {
-      console.info("fx6");
       for (const line of this.lines) {
         for (const cell of line.cells) {
           cell.cache = { state: cell.state, color: cell.color };
@@ -252,7 +251,6 @@ async function addRandomText() {
           ++finished;
           if (finished === this.totalChars) {
             this.isAnimating = false;
-            console.info("finished");
           }
 
           // const lines = this.lines;
@@ -500,7 +498,14 @@ async function addSmoothScroll() {
   document
     .querySelector("body > main > article")
     .setAttribute("id", "smooth-content");
-
+  await waitStyle("https://unpkg.com/lenis@1.3.4/dist/lenis.css");
+  await waitScript("https://unpkg.com/lenis@1.3.4/dist/lenis.min.js");
+  const lenis = new Lenis({
+    smooth: true,
+    anchors: true,
+    autoRaf: true,
+    content: document.querySelector("#smooth-content"),
+  });
   if (!window.gsap) {
     await waitScript(
       "https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"
@@ -514,22 +519,44 @@ async function addSmoothScroll() {
   await waitScript(
     "https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"
   );
+  // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+  // lenis.on("scroll", ScrollTrigger.update);
 
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+  // // Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+  // // This ensures Lenis's smooth scroll animation updates on each GSAP tick
+  // gsap.ticker.add((time) => {
+  //   lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+  // });
 
-  let smoother = ScrollSmoother.create({
-    smooth: 1,
-    smoothTouch: 0.3,
-    effects: true,
-    // smoothTouch: 0.1,
-    // normalizeScroll: true,
-  });
+  // // Disable lag smoothing in GSAP to prevent any delay in scroll animations
+  // gsap.ticker.lagSmoothing(0);
+  // gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
+  // let smoother = ScrollSmoother.create({
+  //   smooth: 1,
+  //   smoothTouch: 0.3,
+  //   effects: true,
+  //   // smoothTouch: 0.1,
+  //   // normalizeScroll: true,
+  // });
+  // gsap.to(".footer", {
+  //   yPercent: -10,
+  //   ease: "none",
+  //   scrollTrigger: {
+  //     trigger: "#footer",
+  //     start: "top bottom", // when footer enters view
+  //     end: "+=15%", // until fully visible
+  //   },
+  // });
+  gsap.set(".footer", { yPercent: -50 });
+  const uncover = gsap.timeline({ paused: true });
+  uncover.to(".footer", { yPercent: 0, ease: "none" });
   ScrollTrigger.create({
-    trigger: "#footer",
-    pin: true,
-    start: "bottom bottom", // when top of #footer hits bottom of viewport
-    end: "+=15%", // pin duration 100% of viewport height
+    trigger: ".blog",
+    start: "bottom bottom",
+    end: "+=75%",
+    animation: uncover,
+    scrub: true,
   });
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////

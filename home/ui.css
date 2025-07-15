@@ -1,11 +1,10 @@
 .ui {
-  background-color: var(--dark-0);
   position: relative;
   min-height: 95vh;
   flex-direction: column;
   display: flex;
   justify-content: center;
-  overflow: hidden;
+  overflow-x: hidden;
 
   > header {
     padding: var(--padding-section);
