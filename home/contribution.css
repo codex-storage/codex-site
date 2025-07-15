@@ -1,9 +1,35 @@
 .contribution {
-  color: var(--light-10);
+  --active-background-color: var(--dark-20);
   --subheader-color: var(--grey-90);
+  color: var(--light-10);
   position: relative;
   overflow: hidden;
   z-index: 0;
+  transition: background-color 0.6s ease, opacity 0.3s ease;
+  opacity: 0.5;
+
+  h3,
+  span,
+  h4,
+  a,
+  p {
+    opacity: 0.5;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transform: translateY(40px);
+  }
+
+  &.active {
+    opacity: 1;
+
+    h3,
+    span,
+    h4,
+    a,
+    p {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
   .parallax-background {
     position: fixed;

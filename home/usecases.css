@@ -1,12 +1,49 @@
 .usecases {
-  /* background: radial-gradient(
-    95.83% 248.64% at 2.67% 4.08%,
-    #2a4635 0%,
-    #010614 100%
-  ); */
+  --active-background-color: #2a4635;
+  transition: background-color 0.6s ease, opacity 0.3s ease;
   position: relative;
   padding: 0;
-  opacity: 0;
+  opacity: 0.5;
+
+  h2,
+  span,
+  p {
+    opacity: 0.5;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transform: translateY(20px);
+  }
+
+  &.active {
+    opacity: 1;
+
+    h2,
+    span,
+    p {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 800px) {
+    padding-bottom: 16em !important;
+  }
+
+  > div {
+    margin: auto;
+    max-width: var(--max-width);
+    padding: var(--padding-section);
+    width: 100%;
+  }
+
+  &.active {
+    opacity: 1;
+
+    /* background: radial-gradient(
+      95.83% 248.64% at 2.67% 4.08%,
+      #2a4635 0%,
+      #010614 100%
+    ); */
+  }
 
   &::before {
     content: " ";

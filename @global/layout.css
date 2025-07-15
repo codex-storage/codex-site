@@ -55,10 +55,11 @@ body {
   font-size: 14px;
   --border-radius: 8px;
   --padding-section: 2em 1em;
+  --active-background-color: var(--dark-30);
 
   > main {
     > article {
-      background-color: var(--dark-30);
+      background-color: var(--active-background-color);
       z-index: 2;
       position: relative;
       transition: background-color 0.6s ease, background-blend-mode 0.6s ease;

@@ -1,11 +1,13 @@
 .hero {
+  --active-background-color: var(--dark-30);
   display: flex;
   height: 720px;
   position: relative;
   min-height: 95vh;
   z-index: 1;
   overflow-x: hidden;
-  transition: background-color 0.6s ease, opacity 0.3s ease;
+  transition: background-color 0.6s ease, opacity 0.2s ease;
+  opacity: 0.5;
 
   img[fetchpriority="high"] {
     position: absolute;
@@ -13,6 +15,17 @@
     right: -20%;
     mix-blend-mode: lighten;
     height: 100%;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+  }
+
+  &.active {
+    background-color: var(--active-background-color);
+    opacity: 1;
+
+    img[fetchpriority="high"] {
+      opacity: 1;
+    }
   }
 
   > div,

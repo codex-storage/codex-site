@@ -829,29 +829,15 @@ function sectionTransitions() {
     (entries, obs) => {
       entries.forEach(async (entry) => {
         if (entry.isIntersecting) {
-          body.style.backgroundColor = "var(--green-12)";
-          body.style.backgroundSize = "cover";
-          body.style.backgroundRepeat = "no-repeat";
-          body.style.backgroundPosition = "center";
-          body.style.backgroundBlendMode = "darken";
-          about.style.opacity = "1";
-          console.info(
-            "About section is intersecting",
-            body.style.backgroundColor
+          entry.target.classList.add("active");
+          body.style.setProperty(
+            "--active-background-color",
+            getComputedStyle(entry.target).getPropertyValue(
+              "--active-background-color"
+            )
           );
-          setTimeout(() => {
-            // about.style.backgroundImage = "url(/img/about.webp)";
-            // about.style.backgroundColor = "var(--green-12)";
-          }, 600);
-          // about.style.backgroundImage = "url(/img/about.webp)";
         } else {
-          about.style.opacity = "0.5";
-          body.style.backgroundSize = "";
-          body.style.backgroundRepeat = "";
-          body.style.backgroundPosition = "";
-          body.style.backgroundBlendMode = "";
-          about.style.backgroundImage = "";
-          about.style.backgroundColor = "";
+          entry.target.classList.remove("active");
         }
       });
     },
@@ -861,157 +847,14 @@ function sectionTransitions() {
   );
 
   observer.observe(about);
-
-  const hero = document.querySelector(".hero");
-
-  new IntersectionObserver(
-    (entries) => {
-      entries.forEach(async (entry) => {
-        if (entry.isIntersecting) {
-          body.style.backgroundColor = "var(--dark-30)";
-          setTimeout(() => {
-            hero.style.backgroundColor = "var(--dark-30)";
-          }, 600);
-          hero.style.opacity = "1";
-        } else {
-          hero.style.backgroundColor = "";
-          hero.style.opacity = "0";
-        }
-      });
-    },
-    {
-      threshold: 0.5,
-    }
-  ).observe(document.querySelector(".hero"));
-
-  const usecases = document.querySelector(".usecases");
-
-  new IntersectionObserver(
-    (entries) => {
-      entries.forEach(async (entry) => {
-        if (entry.isIntersecting) {
-          console.info("Usecases section is intersecting");
-          body.style.backgroundColor = "#2a4635";
-          usecases.style.opacity = "1";
-
-          setTimeout(() => {
-            // body.style.background = `radial-gradient(95.83% 248.64% at 2.67% 4.08%, #2a4635 0%,#010614 100%)`;
-          }, 600);
-        } else {
-          usecases.style.opacity = "0.2";
-          // body.style.background = "transparent";
-        }
-      });
-    },
-    {
-      threshold: 0.5,
-    }
-  ).observe(usecases);
-
-  const featured = document.querySelector(".featured");
-
-  new IntersectionObserver(
-    (entries) => {
-      entries.forEach(async (entry) => {
-        if (entry.isIntersecting) {
-          body.style.backgroundColor = "rgba(240, 240, 240, 1)";
-          console.info(
-            "Featured section is intersecting",
-            body.style.backgroundColor
-          );
-          setTimeout(() => {
-            // body.style.background = `radial-gradient(95.83% 248.64% at 2.67% 4.08%, #2a4635 0%,#010614 100%)`;
-          }, 600);
-        }
-      });
-    },
-    {
-      threshold: 0.5,
-    }
-  ).observe(featured);
-
-  const ui = document.querySelector(".ui");
-
-  new IntersectionObserver(
-    (entries) => {
-      entries.forEach(async (entry) => {
-        if (entry.isIntersecting) {
-          body.style.backgroundColor = "#000000";
-          setTimeout(() => {
-            // body.style.background = `radial-gradient(95.83% 248.64% at 2.67% 4.08%, #2a4635 0%,#010614 100%)`;
-          }, 600);
-        }
-      });
-    },
-    {
-      threshold: 0.5,
-    }
-  ).observe(ui);
-
-  const team = document.querySelector(".team");
-
-  new IntersectionObserver(
-    (entries) => {
-      entries.forEach(async (entry) => {
-        if (entry.isIntersecting) {
-          body.style.backgroundColor = "#fff";
-        }
-      });
-    },
-    {
-      threshold: 0.5,
-    }
-  ).observe(team);
-
-  const contributors = document.querySelector(".contributors");
-
-  new IntersectionObserver(
-    (entries) => {
-      entries.forEach(async (entry) => {
-        if (entry.isIntersecting) {
-          body.style.backgroundColor = "#1b1b1b";
-        }
-      });
-    },
-    {
-      threshold: 0.5,
-    }
-  ).observe(contributors);
-
-  const faq = document.querySelector(".faq");
-
-  new IntersectionObserver(
-    (entries) => {
-      entries.forEach(async (entry) => {
-        if (entry.isIntersecting) {
-          body.style.backgroundColor = "rgba(240, 240, 240, 1)";
-        }
-      });
-    },
-    {
-      threshold: 0.5,
-    }
-  ).observe(faq);
-
-  const blog = document.querySelector(".blog");
-
-  new IntersectionObserver(
-    (entries) => {
-      entries.forEach(async (entry) => {
-        if (entry.isIntersecting) {
-          body.style.backgroundColor = "#fff";
-
-          setTimeout(() => {
-            blog.style.background = `#fff`;
-          }, 600);
-        } else {
-        }
-      });
-    },
-    {
-      threshold: 0.5,
-    }
-  ).observe(blog);
+  observer.observe(document.querySelector(".hero"));
+  observer.observe(document.querySelector(".usecases"));
+  observer.observe(document.querySelector(".featured"));
+  observer.observe(document.querySelector(".ui"));
+  observer.observe(document.querySelector(".team"));
+  observer.observe(document.querySelector(".contribution"));
+  observer.observe(document.querySelector(".faq"));
+  // observer.observe(document.querySelector(".blog"));
 }
 
 waitForPageLoaded().then(() => {
