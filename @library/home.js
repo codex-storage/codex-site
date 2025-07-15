@@ -899,7 +899,7 @@ function sectionTransitions() {
           }, 600);
         } else {
           usecases.style.opacity = "0.2";
-          body.style.background = "transparent";
+          // body.style.background = "transparent";
         }
       });
     },
