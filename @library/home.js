@@ -846,15 +846,19 @@ function sectionTransitions() {
                 "--active-background-color"
               )
             );
-            body.style.setProperty(
-              "--active-background",
-              getComputedStyle(entry.target).getPropertyValue(
-                "--active-background"
-              )
-            );
+            setTimeout(() => {
+              body.style.setProperty(
+                "--active-background",
+                getComputedStyle(entry.target).getPropertyValue(
+                  "--active-background"
+                )
+              );
+            }, 600);
           } else {
             entry.target.classList.remove("active");
-            body.style.setProperty("--active-background", "initial");
+            setTimeout(() => {
+              body.style.setProperty("--active-background", "initial");
+            }, 600);
           }
         });
       },
