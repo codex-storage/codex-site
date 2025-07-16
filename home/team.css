@@ -6,14 +6,11 @@
   transition: background-color 0.6s ease, opacity 0.3s ease;
   opacity: 0.5;
 
-  h3,
-  span,
-  h4,
-  a,
-  p {
+  > div > header,
+  > div > main {
     opacity: 0.5;
     transition: transform 0.6s ease, opacity 0.6s ease;
-    transform: translateY(10px);
+    transform: translateY(40px);
   }
 
   @media (min-width: 1201px) {
@@ -384,11 +381,8 @@
   &.active {
     opacity: 1;
 
-    h3,
-    span,
-    h4,
-    a,
-    p {
+    > div > header,
+    > div > main {
       opacity: 1;
       transform: translateY(0);
     }

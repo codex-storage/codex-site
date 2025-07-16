@@ -667,28 +667,30 @@ function team() {
         if (c) {
           c.classList.add("active");
         }
+        const contributors = document.querySelectorAll(".contributor");
 
-        document
-          .querySelectorAll(".contributor")
-          .forEach((contributor, index) => {
-            contributor.onclick = () => {
-              const i = window.innerWidth > 800 ? index + 2 : index + 5;
-              emblaApi.scrollTo(index);
-              c.classList.remove("active");
-              c = contributor;
-              if (c) {
-                c.classList.add("active");
-              }
-              currentSelectedIndex = index;
-            };
-          });
+        contributors.forEach((contributor, index) => {
+          contributor.onclick = () => {
+            const i = window.innerWidth > 800 ? index + 2 : index + 5;
+            emblaApi.scrollTo(index);
+            c.classList.remove("active");
+            c = contributor;
+            if (c) {
+              c.classList.add("active");
+            }
+            currentSelectedIndex = index;
+          };
+        });
 
         let currentSelectedIndex = 0;
         emblaApi.on("select", () => {
           console.info("Active contributor:", currentSelectedIndex);
 
-          c.classList.remove("active");
-          if (currentSelectedIndex == 14) {
+          if (c) {
+            c.classList.remove("active");
+          }
+
+          if (currentSelectedIndex == contributors.length - 1) {
             currentSelectedIndex = 0;
           } else {
             currentSelectedIndex++;
