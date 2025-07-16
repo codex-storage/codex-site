@@ -556,7 +556,7 @@ async function addSmoothScroll() {
     ScrollTrigger.create({
       trigger: ".blog",
       start: "bottom bottom",
-      end: "+=75%",
+      end: "+=45%",
       animation: uncover,
       scrub: true,
     });
