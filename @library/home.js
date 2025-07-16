@@ -521,7 +521,18 @@ async function blog() {
   );
 
   observer.observe(document.querySelector(".blog"));
-  console.info("Blog observer initialized");
+
+  document.getElementById("blog-1").addEventListener("click", (e) => {
+    window.open(document.getElementById("blog-1").dataset.url, "_blank");
+  });
+
+  document.getElementById("blog-2").addEventListener("click", (e) => {
+    window.open(document.getElementById("blog-2").dataset.url, "_blank");
+  });
+
+  document.getElementById("blog-3").addEventListener("click", (e) => {
+    window.open(document.getElementById("blog-3").dataset.url, "_blank");
+  });
 }
 //////////////////////////////////////////////////////////////////////////////////////
 function contribution() {
@@ -821,39 +832,46 @@ function usescases() {
 }
 //////////////////////////////////////////////////////////////////////////////////////
 function sectionTransitions() {
-  const about = document.querySelector(".about");
   const body = document.querySelector("body > main > article");
 
-  const observer = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach(async (entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("active");
-          body.style.setProperty(
-            "--active-background-color",
-            getComputedStyle(entry.target).getPropertyValue(
-              "--active-background-color"
-            )
-          );
-        } else {
-          entry.target.classList.remove("active");
-        }
-      });
-    },
-    {
-      threshold: 0.5,
-    }
-  );
+  function createObserver(threshold) {
+    return new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach(async (entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            body.style.setProperty(
+              "--active-background-color",
+              getComputedStyle(entry.target).getPropertyValue(
+                "--active-background-color"
+              )
+            );
+          } else {
+            entry.target.classList.remove("active");
+          }
+        });
+      },
+      {
+        threshold,
+      }
+    );
+  }
 
-  observer.observe(about);
+  const observer = createObserver(0.5);
+  observer.observe(document.querySelector(".about"));
   observer.observe(document.querySelector(".hero"));
   observer.observe(document.querySelector(".usecases"));
-  observer.observe(document.querySelector(".featured"));
   observer.observe(document.querySelector(".ui"));
   observer.observe(document.querySelector(".team"));
   observer.observe(document.querySelector(".contribution"));
   observer.observe(document.querySelector(".faq"));
-  // observer.observe(document.querySelector(".blog"));
+
+  if (window.innerWidth > 800) {
+    observer.observe(document.querySelector(".featured"));
+  } else {
+    const observer = createObserver(0.3);
+    observer.observe(document.querySelector(".featured"));
+  }
 }
 
 waitForPageLoaded().then(() => {

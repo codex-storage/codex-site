@@ -38,49 +38,51 @@ news:
 navigation:
   header:
     - label: About
-      href: /
+      href: "/#about"
 
     - label: Resources
-      href: /
+      href: "/#resources"
 
     - label: Vault
-      href: /
+      href: "/#ui"
 
     - label: Contributors
-      href: /
+      href: "/#contributors"
 
     - label: FAQ
-      href: /
+      href: "/#faq"
 
     - label: Blog
-      href: /
+      href: "/#blog"
 
   header_social:
     - icon: icon/header/github.svg
-      href: /
+      href: https://github.com/codex-storage/nim-codex
       label: Github
     - icon: icon/header/mastodon.svg
-      href: /
+      href: https://discord.gg/codex-storage
       label: Discord
 
   footer:
-    - About: /about
+    - About: "/#about"
     - Clients: /
-    - Getting Started: /
-    - Resources: /
+    - Getting Started: https://docs.codex.storage
+    - Resources: "/#resources"
     - Community: /
     - Careers: /
-    - Blog: /
+    - Blog: https://blog.codex.storage
 
   social:
     - label: Github
-      href: /
+      href: https://github.com/codex-storage/nim-codex
+      target: _blank
 
     - label: Discord
-      href: /
+      href: https://discord.gg/codex-storage
+      target: _blank
 
   end:
     - label: Terms & conditions
-      link: /toto
+      link: /terms-and-conditions
     - label: Privacy Policy
-      link: /
+      link: /privacy-policy

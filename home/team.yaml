@@ -1,29 +1,14 @@
 team:
   default:
-    name: Dmitriy
-    github: /
+    name: Giuliano
+    github: https://github.com/gmega
     id: 12345678
     image: img/dmitry.webp
 
   members:
-    - name: Dmitry
-      github: https://github.com/dryajov
-      id: dryajov
-      image: img/dmitry.webp
-
-    - name: Jessie
-      github: https://github.com/jessiebroke
-      id: jessiebroke
-      image: img/dmitry.webp
-
     - name: Giuliano
       github: https://github.com/gmega
       id: gmega
-      image: img/dmitry.webp
-
-    - name: Mark
-      github: https://github.com/markspanbroek
-      id: markspanbroek
       image: img/dmitry.webp
 
     - name: Eric

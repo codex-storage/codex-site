@@ -1,4 +1,4 @@
-<section @name="blog" class="blog fluid">
+<section id="blog" @name="blog" class="blog fluid">
   <header>
     <p>BLOG [+]</p>
     <span>09</span>
@@ -6,11 +6,11 @@
   <main>
     <div>
       <h3>Codex Updates</h3>
-      <a href="">View all</a>
+      <a href="https://blog.codex.storage/">View all</a>
     </div>
 
     <div>
-      <article id="blog-1" role="main">
+      <article id="blog-1" role="main" data-url="{ article1.url }">
         <header>
           <img
             src="{ article1.image }"
@@ -22,11 +22,11 @@
           <small data-splitting>{ article1.date }</small>
           <h4 data-splitting>{ article1.title }</h4>
           <p data-splitting>{ article1.description }</p>
-          <a href="">Read Full</a>
+          <a href="{ article1.url }" target="_blank">Read Full</a>
         </main>
       </article>
       <div>
-        <article id="blog-2" class="complementary">
+        <article id="blog-2" class="complementary" data-url="{ article2.url }">
           <header>
             <img
               src="{ article2.image }"
@@ -42,7 +42,7 @@
             </div>
           </main>
         </article>
-        <article id="blog-3" class="complementary">
+        <article id="blog-3" class="complementary" data-url="{ article2.url }">
           <header>
             <img
               src="{ article3.image }"

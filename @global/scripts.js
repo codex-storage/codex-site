@@ -548,16 +548,19 @@ async function addSmoothScroll() {
   //     end: "+=15%", // until fully visible
   //   },
   // });
-  gsap.set(".footer", { yPercent: -50 });
-  const uncover = gsap.timeline({ paused: true });
-  uncover.to(".footer", { yPercent: 0, ease: "none" });
-  ScrollTrigger.create({
-    trigger: ".blog",
-    start: "bottom bottom",
-    end: "+=75%",
-    animation: uncover,
-    scrub: true,
-  });
+
+  if (document.querySelector(".blog")) {
+    gsap.set(".footer", { yPercent: -50 });
+    const uncover = gsap.timeline({ paused: true });
+    uncover.to(".footer", { yPercent: 0, ease: "none" });
+    ScrollTrigger.create({
+      trigger: ".blog",
+      start: "bottom bottom",
+      end: "+=75%",
+      animation: uncover,
+      scrub: true,
+    });
+  }
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 waitForPageLoaded().then(() => {

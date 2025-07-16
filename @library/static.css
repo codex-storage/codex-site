@@ -1,0 +1,15 @@
+body main article {
+  background-color: white;
+}
+
+body section {
+  min-height: auto;
+  background-color: white;
+
+  &:last-child {
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    max-width: 100%;
+  }
+}

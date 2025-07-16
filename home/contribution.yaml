@@ -1,11 +1,14 @@
 contribution:
   links:
     - label: Testnet Operators
-      url: /
+      url: https://docs.codex.storage/networks/testnet
+      target: _blank
     - label: Discord
-      url: /discord
+      url: https://discord.gg/codex-storage
+      target: _blank
     - label: Github
-      url: /github
+      url: https://github.com/codex-storage/nim-codex
+      target: _blank
   people:
     - name: markspanbroek
       src: /img/contributors/markspanbroek.webp

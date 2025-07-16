@@ -16,19 +16,6 @@
     transform: translateY(40px);
   }
 
-  &.active {
-    opacity: 1;
-
-    h3,
-    span,
-    h4,
-    a,
-    p {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
   @media (min-width: 1201px) {
     margin-bottom: 0;
   }
@@ -150,12 +137,13 @@
 
       .careers {
         width: 200px;
-        background-color: var(--light-30);
+        background-color: transparent;
         border-radius: var(--border-radius);
         border-bottom: 4px solid var(--green-10);
         padding: 1em;
         align-self: flex-start;
         width: 100%;
+        z-index: 1;
 
         @media (min-width: 1201px) {
           max-width: 400px;
@@ -392,6 +380,23 @@
           animation-play-state: paused;
         }
       }
+    }
+  }
+
+  &.active {
+    opacity: 1;
+
+    h3,
+    span,
+    h4,
+    a,
+    p {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .careers {
+      background-color: var(--light-30);
     }
   }
 }
