@@ -563,9 +563,48 @@ async function addSmoothScroll() {
   }
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
+function newsletter() {
+  const form = document.querySelector("footer form");
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const emailInput = form.querySelector("input[type='email']");
+      const email = emailInput.value.trim();
+      emailInput.classList.remove("error");
+
+      if (!email) {
+        emailInput.classList.add("error");
+        return;
+      }
+
+      try {
+        const res = await fetch(
+          "https://blog.codex.storage/ghost/api/content/members/signup/",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email }),
+          }
+        );
+        if (!res.ok) {
+          emailInput.classList.add("error");
+        } else {
+          emailInput.value = "";
+        }
+        // Optionally show success feedback here
+      } catch (err) {
+        emailInput.classList.add("error");
+      }
+    });
+  }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
 waitForPageLoaded().then(() => {
   addRandomText();
   stickyMenu();
   footer();
   addSmoothScroll();
+  newsletter();
 });

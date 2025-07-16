@@ -166,7 +166,10 @@
     }
   }
 
-  .background {
-    /* padding: 1em; */
+  footer {
+    input.error {
+      border-color: red;
+      color: red;
+    }
   }
 }
