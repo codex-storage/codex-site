@@ -846,8 +846,15 @@ function sectionTransitions() {
                 "--active-background-color"
               )
             );
+            body.style.setProperty(
+              "--active-background",
+              getComputedStyle(entry.target).getPropertyValue(
+                "--active-background"
+              )
+            );
           } else {
             entry.target.classList.remove("active");
+            body.style.setProperty("--active-background", "initial");
           }
         });
       },

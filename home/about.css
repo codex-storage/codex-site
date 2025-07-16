@@ -1,10 +1,11 @@
 .about {
-  --active-background-color: var(--green-12);
+  --active-background-color: #6ae4a7;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-blend-mode: darken;
-  transition: background-color 0.6s ease, opacity 0.3s ease;
+  transition: background-image 0.6s ease, background-color 0.6s ease,
+    opacity 0.3s ease;
   opacity: 0.5;
 
   h3,
@@ -17,6 +18,7 @@
 
   &.active {
     opacity: 1;
+    background-image: url(/img/Frame_2953.jpg);
 
     h3,
     span,
