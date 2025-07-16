@@ -841,17 +841,56 @@ function usescases() {
 function sectionTransitions() {
   const body = document.querySelector("body > main > article");
 
+  const ts = {
+    about: {
+      p: new TypeShuffle(document.querySelector(".about header > p")),
+      span: new TypeShuffle(document.querySelector(".about header > span")),
+    },
+    usecases: {
+      p: new TypeShuffle(document.querySelector(".usecases header > p")),
+      span: new TypeShuffle(document.querySelector(".usecases header > span")),
+    },
+    resources: {
+      p: new TypeShuffle(document.querySelector(".featured header > p")),
+      span: new TypeShuffle(document.querySelector(".featured header > span")),
+    },
+    ui: {
+      p: new TypeShuffle(document.querySelector(".ui header > p")),
+      span: new TypeShuffle(document.querySelector(".ui header > span")),
+    },
+    team: {
+      p: new TypeShuffle(document.querySelector(".team header > p")),
+      span: new TypeShuffle(document.querySelector(".team header > span")),
+    },
+    contributors: {
+      p: new TypeShuffle(document.querySelector(".contribution header > p")),
+      span: new TypeShuffle(
+        document.querySelector(".contribution header > span")
+      ),
+    },
+    faq: {
+      p: new TypeShuffle(document.querySelector(".faq header > p")),
+      span: new TypeShuffle(document.querySelector(".faq header > span")),
+    },
+    blog: {
+      p: new TypeShuffle(document.querySelector(".blog header > p")),
+      span: new TypeShuffle(document.querySelector(".blog header > span")),
+    },
+  };
+
   function createObserver(threshold) {
     return new IntersectionObserver(
       (entries, obs) => {
         entries.forEach(async (entry) => {
           if (entry.isIntersecting) {
-            const pts = new TypeShuffle(
-              entry.target.querySelector("header > p")
-            );
-            const sts = new TypeShuffle(
-              entry.target.querySelector("header > span")
-            );
+            const t = ts[entry.target.id];
+            let pts;
+            let sts;
+
+            if (t) {
+              pts = ts[entry.target.id].p;
+              sts = ts[entry.target.id].span;
+            }
 
             entry.target.classList.add("active");
             body.style.setProperty(
@@ -867,8 +906,13 @@ function sectionTransitions() {
                   "--active-background"
                 )
               );
-              pts.trigger("fx6");
-              sts.trigger("fx6");
+              if (pts) {
+                pts.trigger("fx6");
+              }
+
+              if (sts) {
+                sts.trigger("fx6");
+              }
             }, 600);
           } else {
             entry.target.classList.remove("active");
