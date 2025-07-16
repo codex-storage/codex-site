@@ -202,7 +202,6 @@
       user-select: none;
       transition: 0.5s box-shadow, 0.5s border-color;
       cursor: pointer;
-      min-width: 25%;
 
       @media (max-width: 500px) {
         min-width: 75%;
@@ -212,11 +211,10 @@
         min-width: 12%;
         max-width: 315px;
       }
-
+*/
       @media (min-width: 801px) {
-        min-width: 15%;
-        max-width: 315px;
-      } */
+        min-width: 25%;
+      }
 
       &.active {
         border-color: black;

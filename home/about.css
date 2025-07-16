@@ -1,11 +1,7 @@
 .about {
   --active-background-color: #6ae4a7;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-blend-mode: darken;
-  transition: background-image 0.6s ease, background-color 0.6s ease,
-    opacity 0.3s ease;
+
+  transition: background-color 0.6s ease, opacity 0.3s ease;
   opacity: 0.5;
 
   h3,
@@ -16,9 +12,27 @@
     transform: translateY(40px);
   }
 
+  .about-background {
+    z-index: 0;
+    opacity: 0;
+    background-image: url(/img/Frame_2953.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: darken;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    width: 100%;
+    transition: opacity 0.6s ease;
+  }
+
   &.active {
     opacity: 1;
-    background-image: url(/img/Frame_2953.jpg);
+
+    .about-background {
+      opacity: 1;
+    }
 
     h3,
     span,

@@ -880,7 +880,7 @@ function sectionTransitions() {
   if (window.innerWidth > 800) {
     observer.observe(document.querySelector(".featured"));
   } else {
-    const observer = createObserver(0.3);
+    const observer = createObserver(0.2);
     observer.observe(document.querySelector(".featured"));
   }
 }
