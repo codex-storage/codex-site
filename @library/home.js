@@ -6,6 +6,7 @@ import {
   addPrevNextBtnsClickHandlers,
   addDotBtnsAndClickHandlers,
   setupTweenScale,
+  TypeShuffle,
 } from "../@global/helpers.js";
 
 function videoPlayer() {
@@ -663,7 +664,9 @@ function team() {
         );
 
         let c = document.getElementById("contributor-0");
-        c.classList.add("active");
+        if (c) {
+          c.classList.add("active");
+        }
 
         document
           .querySelectorAll(".contributor")
@@ -673,7 +676,9 @@ function team() {
               emblaApi.scrollTo(index);
               c.classList.remove("active");
               c = contributor;
-              c.classList.add("active");
+              if (c) {
+                c.classList.add("active");
+              }
               currentSelectedIndex = index;
             };
           });
@@ -689,7 +694,9 @@ function team() {
             currentSelectedIndex++;
           }
           c = document.getElementById("contributor-" + currentSelectedIndex);
-          c.classList.add("active");
+          if (c) {
+            c.classList.add("active");
+          }
         });
 
         let hasStopped = false;
@@ -839,6 +846,13 @@ function sectionTransitions() {
       (entries, obs) => {
         entries.forEach(async (entry) => {
           if (entry.isIntersecting) {
+            const pts = new TypeShuffle(
+              entry.target.querySelector("header > p")
+            );
+            const sts = new TypeShuffle(
+              entry.target.querySelector("header > span")
+            );
+
             entry.target.classList.add("active");
             body.style.setProperty(
               "--active-background-color",
@@ -853,6 +867,8 @@ function sectionTransitions() {
                   "--active-background"
                 )
               );
+              pts.trigger("fx6");
+              sts.trigger("fx6");
             }, 600);
           } else {
             entry.target.classList.remove("active");
@@ -876,6 +892,7 @@ function sectionTransitions() {
   observer.observe(document.querySelector(".team"));
   observer.observe(document.querySelector(".contribution"));
   observer.observe(document.querySelector(".faq"));
+  observer.observe(document.querySelector(".blog"));
 
   if (window.innerWidth > 800) {
     observer.observe(document.querySelector(".featured"));
