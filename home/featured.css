@@ -29,9 +29,7 @@
 
   .featured-background {
     position: absolute;
-    width: 190%;
     object-fit: cover;
-    height: 395px;
     top: 0;
     z-index: 0;
     animation: scrollText 60s infinite linear;
