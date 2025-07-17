@@ -192,6 +192,7 @@
           bottom: 0%;
           right: 102%;
           z-index: 1;
+          height: auto;
         }
 
         @media (max-width: 1000px) {
