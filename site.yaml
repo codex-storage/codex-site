@@ -7,6 +7,8 @@ view_transitions: false
 native_css_nesting: false
 inline_css: true
 sections: true
+#animation: http://localhost:3000
+animation: /animation/effect1
 
 title_template: "%s | Codex"
 og_image: /img/og.png

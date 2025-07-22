@@ -938,16 +938,17 @@ function sectionTransitions() {
   observer.observe(document.querySelector(".team"));
   observer.observe(document.querySelector(".contribution"));
   observer.observe(document.querySelector(".faq"));
-  observer.observe(document.querySelector(".blog"));
 
   if (window.innerWidth > 800) {
     observer.observe(document.querySelector(".featured"));
+    observer.observe(document.querySelector(".blog"));
   } else {
     const observer = createObserver(0.2);
     observer.observe(document.querySelector(".featured"));
+    observer.observe(document.querySelector(".blog"));
   }
 }
-
+//////////////////////////////////////////////////////////////////////////////////////
 waitForPageLoaded().then(() => {
   videoPlayer();
   if (window.innerWidth <= 800) {

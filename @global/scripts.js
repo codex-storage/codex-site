@@ -204,7 +204,7 @@ function footer() {
     }
   );
 
-  // observer.observe(document.querySelector(".blog"));
+  observer.observe(document.querySelector(".blog"));
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 async function addSmoothScroll() {
@@ -318,7 +318,7 @@ function newsletter() {
 waitForPageLoaded().then(() => {
   addRandomText();
   stickyMenu();
-  footer();
+  // footer();
   addSmoothScroll();
   newsletter();
 });
