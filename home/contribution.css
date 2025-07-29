@@ -161,9 +161,10 @@
       border-spacing: 0;
       transition: border-color 0.5s, color 0.5s;
 
-      &::after {
-        content: "🡕";
-        line-height: 17px;
+      svg {
+        transform: rotate(-45deg);
+        position: relative;
+        top: 3px;
       }
 
       &:hover {

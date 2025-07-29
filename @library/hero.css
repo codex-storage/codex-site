@@ -216,6 +216,7 @@
         position: relative;
         top: 1px;
         left: 0.25em;
+        transform: rotate(90deg);
       }
     }
 
