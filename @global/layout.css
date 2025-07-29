@@ -107,7 +107,7 @@ body {
     overflow-x: hidden;
 
     /* @media (min-width: 1001px) { */
-    min-height: 125vh;
+    min-height: 135vh;
     /* } */
 
     &:not(.fluid) {
@@ -152,6 +152,26 @@ body {
 
       > main {
         display: flex;
+      }
+    }
+  }
+
+  .navigation-end-desktop {
+    display: none;
+    @media (min-width: 801px) {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+  .navigation-end {
+    > div:not(.navigation-end-desktop) {
+      display: none;
+
+      @media (max-width: 800px) {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
       }
     }
   }

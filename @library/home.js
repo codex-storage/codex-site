@@ -930,22 +930,28 @@ function sectionTransitions() {
     );
   }
 
-  const observer = createObserver(0.5);
-  observer.observe(document.querySelector(".about"));
-  observer.observe(document.querySelector(".hero"));
-  observer.observe(document.querySelector(".usecases"));
-  observer.observe(document.querySelector(".ui"));
-  observer.observe(document.querySelector(".team"));
-  observer.observe(document.querySelector(".contribution"));
-  observer.observe(document.querySelector(".faq"));
-
   if (window.innerWidth > 800) {
+    const observer = createObserver(0.5);
+    observer.observe(document.querySelector(".about"));
+    observer.observe(document.querySelector(".hero"));
+    observer.observe(document.querySelector(".usecases"));
+    observer.observe(document.querySelector(".ui"));
+    observer.observe(document.querySelector(".contribution"));
+    observer.observe(document.querySelector(".faq"));
     observer.observe(document.querySelector(".featured"));
     observer.observe(document.querySelector(".blog"));
+    observer.observe(document.querySelector(".team"));
   } else {
-    const observer = createObserver(0.2);
+    const observer = createObserver(0.3);
+    observer.observe(document.querySelector(".about"));
+    observer.observe(document.querySelector(".hero"));
+    observer.observe(document.querySelector(".usecases"));
+    observer.observe(document.querySelector(".ui"));
+    observer.observe(document.querySelector(".contribution"));
+    observer.observe(document.querySelector(".faq"));
     observer.observe(document.querySelector(".featured"));
     observer.observe(document.querySelector(".blog"));
+    observer.observe(document.querySelector(".team"));
   }
 }
 //////////////////////////////////////////////////////////////////////////////////////

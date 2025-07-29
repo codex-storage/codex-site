@@ -1,5 +1,14 @@
-<div @name="navigation-end">
-  <p>© 2025 Codex</p>
-  <a :for="item in items" href="{item.link}">{item.label}</a>
-  <p>Built by <u>IFT</u></p>
+<div @name="navigation-end" class="navigation-end">
+  <div class="navigation-end-desktop">
+    <p>© 2025 Codex</p>
+    <a :for="item in items" href="{item.link}">{item.label}</a>
+    <p>Built by <u>IFT</u></p>
+  </div>
+  <div>
+    <a :for="item in items" href="{item.link}">{item.label}</a>
+  </div>
+  <div>
+    <p>© 2025 Codex</p>
+    <p>Built by <u>IFT</u></p>
+  </div>
 </div>
