@@ -7,13 +7,12 @@
   overflow-x: hidden;
   transition: background-color 0.6s ease, opacity 0.3s ease;
   opacity: 0;
-  min-height: 130vh;
 
   > header,
   > main {
     opacity: 0;
-    transition: transform 0.6s ease, opacity 0.6s ease;
-    transform: translateY(80px);
+    transition: transform 1.2s ease, opacity 0.6s ease;
+    transform: translateY(200px);
   }
 
   &.active {
@@ -188,8 +187,9 @@
         @media (min-width: 1001px) {
           position: absolute;
           width: 25%;
-          bottom: 0%;
-          right: 102%;
+          height: auto;
+          bottom: 5%;
+          right: 97%;
           z-index: 1;
           height: auto;
         }

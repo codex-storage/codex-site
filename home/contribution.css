@@ -11,8 +11,8 @@
   > header,
   > main {
     opacity: 0;
-    transition: transform 0.6s ease, opacity 0.6s ease;
-    transform: translateY(80px);
+    transition: transform 1.2s ease, opacity 0.6s ease;
+    transform: translateY(200px);
   }
 
   &.active {

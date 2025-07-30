@@ -104,10 +104,10 @@ body {
     margin-right: auto;
     z-index: 1;
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
 
     /* @media (min-width: 1001px) { */
-    min-height: 135vh;
+    min-height: 100vh;
     /* } */
 
     &:not(.fluid) {
