@@ -942,7 +942,7 @@ function sectionTransitions() {
     observer.observe(document.querySelector(".blog"));
     observer.observe(document.querySelector(".team"));
   } else {
-    const observer = createObserver(0.3);
+    const observer = createObserver(0.25);
     observer.observe(document.querySelector(".about"));
     observer.observe(document.querySelector(".hero"));
     observer.observe(document.querySelector(".usecases"));
